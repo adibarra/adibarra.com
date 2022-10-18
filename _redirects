@@ -1,0 +1,7 @@
+# Internal redirects
+/rss https://adibarra.com/feed.xml 301
+/blog https://adibarra.com/posts 301
+
+# External redirects
+/github https://github.com/adibarra 301
+/gh https://github.com/adibarra 301
