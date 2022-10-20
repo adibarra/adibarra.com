@@ -46,6 +46,7 @@ specifiers:
   vite-ssg: ^0.21.1
   vite-svg-loader: ^3.6.0
   vue: ^3.2.41
+  vue-pdf-embed: ^1.1.4
   vue-router: 4.1.5
   winston: ^3.8.2
   winston-daily-rotate-file: ^4.7.1
@@ -56,6 +57,7 @@ dependencies:
   dayjs: 1.11.5
   nprogress: 0.2.0
   vue: 3.2.41
+  vue-pdf-embed: 1.1.4_vue@3.2.41
   vue-router: 4.1.5_vue@3.2.41
 
 devDependencies:
@@ -5788,6 +5790,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /vue-pdf-embed/1.1.4_vue@3.2.41:
+    resolution: {integrity: sha512-d4c7nM3LneWUiL4MssIyPHfGgVMRPh4Z7UgLsXMZ+lbAtH/6SBUFHdzZQLY2BASdh16BM/v6YCbmtQU+KIQdrg==}
+    peerDependencies:
+      vue: ^2.x || ^3.x
+    dependencies:
+      vue: 3.2.41
+    dev: false
 
   /vue-router/4.1.5_vue@3.2.41:
     resolution: {integrity: sha512-IsvoF5D2GQ/EGTs/Th4NQms9gd2NSqV+yylxIyp/OYp8xOwxmU8Kj/74E9DTSYAyH5LX7idVUngN3JSj1X4xcQ==}
