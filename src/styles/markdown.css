@@ -152,7 +152,7 @@ h6:focus .header-anchor {
 }
 
 .table-of-contents:hover {
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .table-of-contents ul > li::before {

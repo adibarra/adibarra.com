@@ -1,3 +1,12 @@
+.prose .caption {
+  font-size: 0.875em;
+  line-height: 1.4285714;
+  margin-top: 0.25em;
+  text-align: right;
+  opacity: 0.75;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
 .prose {
   color: var(--fg);
   max-width: 65ch;
@@ -121,16 +130,11 @@
 }
 .prose h4 {
   color: inherit;
+  font-size: 1.1em;
   font-weight: 600;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   line-height: 1.5;
-}
-.prose figure figcaption {
-  color: #6b7280;
-  font-size: 0.875em;
-  line-height: 1.4285714;
-  margin-top: 0.8571429em;
 }
 .prose code {
   color: var(--fg-deep);
