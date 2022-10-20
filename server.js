@@ -46,7 +46,7 @@ app.use('/', async (req, res, next) => {
 // set ./dist as root directory, serve request with no extension as .html
 app.use(express.static('dist', { extensions: ['html'] }))
 
-// default all other requests to the 404 page
+// default all other requests to index which will handle 404s
 app.use(async (req, res) => {
   res.status(404).sendFile('dist/index.html', { root: __dirname })
   const ip = (req.headers['cf-connecting-ip'] || req.ip)

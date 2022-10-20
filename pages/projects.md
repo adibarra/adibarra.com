@@ -1,8 +1,8 @@
 ---
 title: Projects | Alec Ibarra
 display: Projects
-subtitle: A list of open source projects that I am proud of
-description: A list of open source projects that I am proud of
+subtitle: A list of open source projects I'm proud of
+description: A list of open source projects I'm proud of
 plum: true
 projects:
   Best Projects:
