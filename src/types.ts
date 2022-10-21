@@ -7,5 +7,4 @@ export interface Post {
   platform?: string
   duration?: string
   upcoming?: boolean
-  published?: boolean
 }

@@ -18,7 +18,7 @@ const routes: Post[] = router.getRoutes()
     title: i.meta.frontmatter.title,
     date: i.meta.frontmatter.date,
     duration: i.meta.frontmatter.duration,
-    published: i.meta.frontmatter.published,
+    upcoming: i.meta.frontmatter.upcoming,
   }))
 
 const posts = computed(() => (props.posts || routes))
@@ -41,12 +41,12 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
       </div>
       <app-link
         class="item block font-normal mb-6 mt-2 no-underline"
-        :to="route.published ? route.path : ''"
+        :to="route.upcoming ? '' : route.path"
       >
         <li class="no-underline">
           <div class="title text-lg leading-1.2em">
             <span
-              v-if="!route.published"
+              v-if="route.upcoming"
               align-middle
               class="text-xs border rounded px-1 pb-0.2 md:ml--19 mr2 bg-lime/10 border-lime text-lime"
             >upcoming</span>
