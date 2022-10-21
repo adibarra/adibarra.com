@@ -17,15 +17,9 @@ defineProps<{ projects: Record<string, any[]> }>()
         :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
         :title="item.name"
       >
-        <!-- Custom icons used on this page go here -->
         <div v-if="item.icon" class="pt-2 pr-5">
-          <Slidev v-if="item.icon === 'slidev'" class="text-4xl opacity-50" />
-          <VueUse v-else-if="item.icon === 'vueuse'" class="text-4xl opacity-50" />
-          <VueReactivity v-else-if="item.icon === 'vue-reactivity'" class="text-4xl opacity-50" />
-          <VueDemi v-else-if="item.icon === 'vue-demi'" class="text-4xl opacity-50" />
-          <Unocss v-else-if="item.icon === 'unocss'" class="text-4xl opacity-50" />
-          <Vitest v-else-if="item.icon === 'vitest'" class="text-4xl opacity-50" />
-          <div v-else class="text-3xl opacity-50" :class="item.icon || 'i-carbon-unknown'" />
+          <!-- Custom icons used on this page go here -->
+          <div class="text-3xl opacity-50" :class="item.icon || 'i-carbon-unknown'" />
         </div>
         <div class="flex-auto">
           <div cla ss="text-normal">{{ item.name }}</div>
