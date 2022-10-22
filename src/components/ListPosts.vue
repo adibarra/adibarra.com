@@ -48,7 +48,7 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
             <span
               v-if="route.upcoming"
               align-middle
-              class="text-xs border rounded px-1 pb-0.2 md:ml--19 mr2 bg-lime/10 border-lime text-lime"
+              class="text-xs border rounded px-1 pb-0.2 md:ml--18.5 mr2 bg-lime/10 border-lime text-lime"
             >upcoming</span>
             <span align-middle>{{ route.title }}</span>
           </div>
