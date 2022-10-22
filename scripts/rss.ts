@@ -77,7 +77,7 @@ async function writeFeed(name: string, options: FeedOptions, items: Item[]) {
   const feed = new Feed(options)
 
   items.forEach(item => feed.addItem(item))
-  items.forEach(i => console.log(i.title, i.date))
+  // items.forEach(i => console.log(i.title, i.date))
 
   await fs.ensureDir(dirname(`./dist/${name}`))
   await fs.writeFile(`./dist/${name}.xml`, feed.rss2(), 'utf-8')
