@@ -10,7 +10,7 @@ const props = defineProps<{
 
 const router = useRouter()
 const routes: Post[] = router.getRoutes()
-  .filter(i => i.path.startsWith('/posts') && i.meta.frontmatter.date)
+  .filter(i => i.path.startsWith('/posts') && i.meta.frontmatter && i.meta.frontmatter.date)
   .sort((a, b) => +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date))
   .filter(i => !i.path.endsWith('.html') && i.meta.frontmatter.type === props.type)
   .map(i => ({
