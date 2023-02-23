@@ -2,7 +2,6 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
 import Pages from 'vite-plugin-pages'
-import Inspect from 'vite-plugin-inspect'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
@@ -114,8 +113,6 @@ export default defineConfig({
         }),
       ],
     }),
-
-    Inspect(),
 
     Icons({
       defaultClass: 'inline',

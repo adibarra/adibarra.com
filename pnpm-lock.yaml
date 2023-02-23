@@ -35,7 +35,6 @@ specifiers:
   unplugin-icons: ^0.15.3
   unplugin-vue-components: ^0.24.0
   vite: ^4.1.4
-  vite-plugin-inspect: ^0.7.15
   vite-plugin-pages: ^0.28.0
   vite-plugin-vue-markdown: ^0.22.4
   vite-ssg: ^0.22.1
@@ -82,7 +81,6 @@ devDependencies:
   unplugin-icons: 0.15.3
   unplugin-vue-components: 0.24.0_vue@3.2.47
   vite: 4.1.4
-  vite-plugin-inspect: 0.7.15_vite@4.1.4
   vite-plugin-pages: 0.28.0_vite@4.1.4
   vite-plugin-vue-markdown: 0.22.4_vite@4.1.4
   vite-ssg: 0.22.1_acdun4eo2v7scaq2smurt3gvwq
@@ -6037,25 +6035,6 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       builtins: 5.0.1
-    dev: true
-
-  /vite-plugin-inspect/0.7.15_vite@4.1.4:
-    resolution: {integrity: sha512-oxeZCljacA/slhGFbDNlBqdhDU9fgdHL84i7Nz7DnaAIE7DhTiW2djanw3d/BKuZtduKUY82vRUQ4iaG917t2A==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      vite: ^3.1.0 || ^4.0.0
-    dependencies:
-      '@antfu/utils': 0.7.2
-      '@rollup/pluginutils': 5.0.2
-      debug: 4.3.4
-      fs-extra: 11.1.0
-      kolorist: 1.6.0
-      sirv: 2.0.2
-      ufo: 1.1.0
-      vite: 4.1.4
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
     dev: true
 
   /vite-plugin-pages/0.28.0_vite@4.1.4:
