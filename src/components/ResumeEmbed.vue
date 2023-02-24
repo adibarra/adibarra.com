@@ -1,15 +1,14 @@
 <template>
-  <div
-    class="absolute ml--8 text-xl"
-    style="transform: rotate(-90deg)"
-  >
-    <a
-      href="assets/pdfs/Resume - Alec Ibarra.pdf"
-      target="_blank"
-      rel="noopener"
-    >
-      <div style="transform: rotate(90deg)" i-carbon-document-download />
-    </a>
-  </div>
-  <img src="assets/images/Resume.png">
+  <figure>
+    <img src="/assets/images/resume.png" alt="Resume - Alec Ibarra" rounded-lg>
+    <figcaption class="caption">
+      <a
+        href="assets/pdfs/Resume - Alec Ibarra.pdf"
+        target="_blank"
+        rel="noopener"
+      >
+        Download as PDF <div i-carbon-document-download />
+      </a>
+    </figcaption>
+  </figure>
 </template>
