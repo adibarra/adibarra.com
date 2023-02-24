@@ -62,10 +62,10 @@ onMounted(() => {
     <h1 class="mb-0">
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
-    <p v-if="frontmatter.date" class="opacity-50 !-mt-2">
+    <p v-if="frontmatter.date" class="op-50 !-mt-2">
       {{ formatDate(frontmatter.date) }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
     </p>
-    <p v-if="frontmatter.subtitle" class="opacity-50 !-mt-6 italic">
+    <p v-if="frontmatter.subtitle" class="op-50 !-mt-6 italic">
       {{ frontmatter.subtitle }}
     </p>
   </div>
@@ -75,7 +75,7 @@ onMounted(() => {
   <div v-if="route.path !== '/'" class="prose m-auto mt-8 mb-8">
     <router-link
       :to="route.path.split('/').slice(0, -1).join('/') || '/'"
-      class="font-mono no-underline opacity-50 hover:opacity-75"
+      class="font-mono no-underline op-50 hover:op-75"
     >
       cd ..
     </router-link>
