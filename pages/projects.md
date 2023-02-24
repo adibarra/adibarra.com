@@ -22,7 +22,7 @@ projects:
       link: 'https://github.com/adibarra/Generic-DiscordBot'
       desc: '''Quick Start Bot'' to cut down on the time it take to write complex discord bots.'
       icon: 'i-fluent-bot-24-regular'
-  
+
   Engines / Framework:
     - name: 'Game Engine V2'
       link: 'https://github.com/adibarra/GameEngineV2'
@@ -36,7 +36,7 @@ projects:
       icon: 'i-mdi-cards-outline'
     - name: 'Ultimate Tic-Tac-Toe'
       link: 'https://github.com/adibarra/UltimateTicTacToe'
-      desc: 'The most complicated Tic-Tac-Toe you''ve ever seen.'
+      desc: 'The most complicated game of Tic-Tac-Toe you''ve ever seen.'
       icon: 'i-carbon-apps'
     - name: 'TowerDefense (Remastered)'
       link: 'https://github.com/adibarra/TowerDefenseRemastered'
@@ -62,7 +62,7 @@ projects:
       link: 'https://github.com/adibarra/PropHunt'
       desc: 'Hide as a prop and try to evade the hunters.'
       icon: 'i-tabler-mug'
-  
+
   Other:
     - name: 'Check out my GitHub'
       link: 'https://github.com/adibarra'
