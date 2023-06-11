@@ -7,11 +7,11 @@ plum: true
 projects:
   Best Projects:
     - name: 'tamugd-website'
-      link: 'https://github.com/TAMU-GradeDistribution/tamugd-website'
+      link: 'https://github.com/adibarra/tamugd-website'
       desc: 'Compare and analyze grade distributions for courses taught at TAMU.'
       icon: 'i-carbon-chart-line-data'
     - name: 'tamugd-parser'
-      link: 'https://github.com/TAMU-GradeDistribution/tamugd-parser'
+      link: 'https://github.com/adibarra/tamugd-parser'
       desc: 'Download, parse, and process grade distribution data from TAMU.'
       icon: 'i-carbon-data-base'
     - name: 'XO-MarketBot'
