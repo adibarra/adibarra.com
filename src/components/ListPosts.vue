@@ -43,19 +43,25 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
         :to="route.upcoming ? '' : route.path"
         block font-normal mb-6 mt-2 no-underline
       >
-        <li class="no-underline">
-          <div class="title text-lg leading-1.2em">
+        <li no-underline>
+          <div class="title" text-lg leading-1.2em>
             <span
               v-if="route.upcoming"
-              class="text-xs border rounded px-1 pb-0.2 md:ml--18.5 mr2 bg-lime/10 border-lime text-lime"
-              align-middle
-            >upcoming</span>
-            <span align-middle>{{ route.title }}</span>
+              class="bg-lime/10 border"
+              text-xs rounded px-1 pb-0.2 md:ml--18.5 mr2 border-lime text-lime align-middle
+            >
+              upcoming
+            </span>
+            <span align-middle>
+              {{ route.title }}
+            </span>
           </div>
 
-          <div class="time op-50 text-sm">
+          <div class="time" op-50 text-sm>
             {{ formatDate(route.date) }}
-            <span v-if="route.duration" op-80>· {{ route.duration }}</span>
+            <span v-if="route.duration" op-80>
+              · {{ route.duration }}
+            </span>
           </div>
         </li>
       </app-link>

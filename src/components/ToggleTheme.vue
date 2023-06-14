@@ -1,14 +1,13 @@
 <script setup lang='ts'>
-import { isDark } from '~/logic'
-
-function toggleDark() {
-  isDark.value = !isDark.value
-}
+import { toggleDark } from '~/logic'
 </script>
 
 <template>
-  <a class="select-none" title="Toggle Color Scheme" @click="toggleDark">
-    <div v-if="isDark" i-ri-moon-line />
-    <div v-else i-ri-sun-line />
+  <a
+    title="Toggle Color Scheme"
+    select-none
+    @click="toggleDark"
+  >
+    <div i-ri-sun-line dark:i-ri-moon-line />
   </a>
 </template>

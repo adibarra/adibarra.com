@@ -1,29 +1,36 @@
 <script setup lang="ts">
-defineProps<{ projects: Record<string, any[]> }>()
+defineProps<{
+  projects: Record<string, any[]>
+}>()
 </script>
 
 <template>
   <template v-for="key in Object.keys(projects)" :key="key">
-    <h4 class="mt-10 font-bold">
+    <h4 mt-10 font-bold>
       {{ key }}
     </h4>
-    <div class="project-grid py-2 -mx-3 gap-2">
+    <div class="project-grid" py-2 mx--3 gap-2>
       <a
         v-for="item, idx in projects[key]"
         :key="idx"
-        class="item relative flex items-center"
         :href="item.link"
-        target="_blank"
         :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
         :title="item.name"
+        target="_blank"
+        class="item"
+        relative flex items-center
       >
-        <div v-if="item.icon" class="pt-2 pr-5">
+        <div v-if="item.icon" pt-2 pr-5>
           <!-- Custom icons used on this page go here -->
-          <div class="text-3xl opacity-50" :class="item.icon || 'i-carbon-unknown'" />
+          <div text-3xl opacity-50 :class="item.icon || 'i-carbon-unknown'" />
         </div>
-        <div class="flex-auto">
-          <div cla ss="text-normal">{{ item.name }}</div>
-          <div class="desc text-sm opacity-50 font-normal" v-html="item.desc" />
+        <div flex-auto>
+          <div text-normal>{{ item.name }}</div>
+          <div
+            class="desc"
+            text-sm opacity-50 font-normal
+            v-html="item.desc"
+          />
         </div>
       </a>
     </div>

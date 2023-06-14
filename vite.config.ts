@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
 import Pages from 'vite-plugin-pages'
@@ -13,7 +13,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import anchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
 import UnoCSS from 'unocss/vite'
-import SVG from 'vite-svg-loader'
+
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 import { slugify } from './scripts/slugify'
@@ -43,12 +43,11 @@ export default defineConfig({
 
     Pages({
       extensions: ['vue', 'md'],
-      pagesDir: 'pages',
+      dirs: 'pages',
       extendRoute(route) {
         const path = resolve(__dirname, route.component.slice(1))
-        const parts = path.split(/[\\\/]/)
 
-        if (parts.pop() !== 'projects.md' && parts.pop() !== 'pages') {
+        if (path.endsWith('.md') && path.split('/').pop() !== 'projects.md') {
           const md = fs.readFileSync(path, 'utf-8')
           const { data } = matter(md)
           route.meta = Object.assign(route.meta || {}, { frontmatter: data })
@@ -118,10 +117,6 @@ export default defineConfig({
     Icons({
       defaultClass: 'inline',
       defaultStyle: 'vertical-align: sub;',
-    }),
-
-    SVG({
-      svgo: false,
     }),
   ],
 

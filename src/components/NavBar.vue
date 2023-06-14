@@ -3,11 +3,11 @@ import { isDark } from '~/logic'
 </script>
 
 <template>
-  <header class="z-40">
+  <header z-40>
     <router-link
-      class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
       to="/"
       focusable="false"
+      w-10 h-10 absolute lg:fixed m-6 select-none outline-none
     >
       <img v-if="isDark" src="/logo-dark.svg?url" alt="logo">
       <img v-else src="/logo.svg?url" alt="logo">
@@ -16,19 +16,19 @@ import { isDark } from '~/logic'
       <div class="spacer" />
       <div class="right">
         <router-link to="/" title="Home">
-          <span class="lt-md:hidden">Home</span>
+          <span lt-md:hidden>Home</span>
           <div i-carbon-home md:hidden />
         </router-link>
         <router-link to="/projects" title="Projects">
-          <span class="lt-md:hidden">Projects</span>
+          <span lt-md:hidden>Projects</span>
           <div i-ri-code-s-slash-line md:hidden />
         </router-link>
         <router-link to="/posts" title="Blog">
-          <span class="lt-md:hidden">Blog</span>
+          <span lt-md:hidden>Blog</span>
           <div i-ri-article-line md:hidden />
         </router-link>
         <router-link to="/resume" title="Resume">
-          <span class="lt-md:hidden">Resume</span>
+          <span lt-md:hidden>Resume</span>
           <div i-uil-file-alt md:hidden />
         </router-link>
         <a href="https://github.com/adibarra" title="GitHub" target="_blank" rel="noopener">
