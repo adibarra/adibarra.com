@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isDark } from '~/logics'
+import { isDark } from '~/logic'
 </script>
 
 <template>
@@ -34,7 +34,7 @@ import { isDark } from '~/logics'
         <a href="https://github.com/adibarra" title="GitHub" target="_blank" rel="noopener">
           <div i-uil-github-alt />
         </a>
-        <a href="mailto://hi@adibarra.com" title="Email" target="_blank" rel="noopener">
+        <a href="mailto://hello@adibarra.com" title="Email" target="_blank" rel="noopener">
           <div i-feather-mail />
         </a>
         <toggle-theme />
