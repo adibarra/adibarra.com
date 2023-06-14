@@ -1,6 +1,9 @@
 import dayjs from 'dayjs'
 
-export const isDark = useDark()
+export const isDark = useDark({
+  initialValue: 'dark',
+  storageKey: 'color-scheme',
+})
 
 export function toggleDark() {
   isDark.value = !isDark.value
