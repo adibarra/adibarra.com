@@ -1,8 +1,11 @@
 {
   "recommendations": [
-    "vue.volar",
+    "antfu.goto-alias",
     "antfu.iconify",
+    "antfu.unocss",
+    "csstools.postcss",
     "dbaeumer.vscode-eslint",
-    "bradlc.vscode-tailwindcss"
+    "streetsidesoftware.code-spell-checker",
+    "vue.volar"
   ]
 }
