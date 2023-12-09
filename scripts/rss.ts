@@ -27,7 +27,7 @@ async function buildBlogRSS() {
 
   const options = {
     title: 'Alec Ibarra',
-    description: 'Alec Ibarra\' Blog',
+    description: 'Alec Ibarra\'s Blog',
     id: 'https://adibarra.com/',
     link: 'https://adibarra.com/',
     copyright: `CC BY-NC-SA 4.0 ${new Date().getFullYear()} © Alec Ibarra`,
