@@ -1,17 +1,11 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import { formatDate } from '~/logic'
 import type { Post } from '~/types'
 
-const props = defineProps<{
-  type?: string
-  posts?: Post[]
-}>()
-
 const router = useRouter()
-const routes: Post[] = router.getRoutes()
-  .filter(i => i.path.startsWith('/posts') && !i.path.endsWith('.html'))
-  .filter(i => i.meta.frontmatter && i.meta.frontmatter.date && i.meta.frontmatter.type === props.type)
+const posts: Post[] = router.getRoutes()
+  .filter(i => i.path.startsWith('/posts/'))
+  .filter(i => i.meta.frontmatter && i.meta.frontmatter.date)
   .sort((a, b) => +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date))
   .map(i => ({
     path: i.path,
@@ -20,7 +14,6 @@ const routes: Post[] = router.getRoutes()
     duration: i.meta.frontmatter.duration,
     upcoming: i.meta.frontmatter.upcoming,
   }))
-const posts = computed(() => (props.posts || routes))
 
 const getYear = (a: Date | string | number) => new Date(a).getFullYear()
 const isSameYear = (a: Date | string | number, b: Date | string | number) => a && b && getYear(a) === getYear(b)
@@ -35,20 +28,20 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
     </template>
 
     <template v-for="route, idx in posts" :key="route.path">
-      <div v-if="!isSameYear(route.date, posts[idx - 1]?.date)" relative h20 pointer-events-none>
-        <span text-8em op-10 absolute left--3rem top--2rem font-bold>{{ getYear(route.date) }}</span>
+      <div v-if="!isSameYear(route.date, posts[idx - 1]?.date)" pointer-events-none relative h20>
+        <span absolute left--3rem top--2rem text-8em font-bold op-10>{{ getYear(route.date) }}</span>
       </div>
       <app-link
         class="item"
         :to="route.upcoming ? '' : route.path"
-        block font-normal mb-6 mt-2 no-underline
+        mb-6 mt-2 block font-normal no-underline
       >
         <li no-underline>
           <div class="title" text-lg leading-1.2em>
             <span
               v-if="route.upcoming"
-              class="bg-lime/10 border"
-              text-xs rounded px-1 pb-0.2 md:ml--18.5 mr2 border-lime text-lime align-middle
+              class="border bg-lime/10"
+              mr2 border-lime rounded px-1 pb-0.2 align-middle text-xs text-lime md:ml--18.5
             >
               upcoming
             </span>
@@ -57,7 +50,7 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
             </span>
           </div>
 
-          <div class="time" op-50 text-sm>
+          <div class="time" text-sm op-50>
             {{ formatDate(route.date) }}
             <span v-if="route.duration" op-80>
               · {{ route.duration }}
