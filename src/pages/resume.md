@@ -12,7 +12,7 @@ plum: true
       target="_blank"
       rel="noopener"
     >
-      Download as PDF <div i-carbon-document-download />
+      Download as PDF <div i-carbon-document-download inline-block align-text-bottom />
     </a>
   </figcaption>
 </figure>
