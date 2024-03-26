@@ -3,16 +3,12 @@ useHead({
   meta: [
     { property: 'og:title', content: 'Alec Ibarra' },
     { property: 'og:image', content: 'https://adibarra.com/og-icon.png' },
-    { name: 'description', content: 'Alec Ibarra\'s personal website, blog, and portfolio.' },
+    { name: 'description', content: 'Alec Ibarra\'s personal website.' },
     { name: 'twitter:card', content: 'summary' },
   ],
 })
 </script>
 
 <template>
-  <NavBar />
-  <main px-7 py-10 of-x-hidden>
-    <RouterView />
-    <Footer />
-  </main>
+  <RouterView />
 </template>

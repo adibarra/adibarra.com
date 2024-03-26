@@ -1,17 +1,19 @@
-import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts } from 'unocss'
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  presetWebFonts,
+} from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetIcons({
-      extraProperties: {
-        'display': 'inline-block',
-        'height': '1.2em',
-        'width': '1.2em',
-        'vertical-align': 'text-bottom',
-      },
-    }),
-    presetAttributify(),
     presetUno(),
+    presetAttributify(),
+    presetIcons({
+      scale: 1.2,
+      warn: true,
+    }),
     presetWebFonts({
       fonts: {
         sans: 'Inter:400,600,800',

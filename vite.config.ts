@@ -1,22 +1,27 @@
 import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
-import Pages from 'vite-plugin-pages'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import Components from 'unplugin-vue-components/vite'
-import Markdown from 'vite-plugin-vue-markdown'
 import Vue from '@vitejs/plugin-vue'
-import Shiki from 'markdown-it-shiki'
+import Shiki from '@shikijs/markdown-it'
+import generateSitemap from 'vite-ssg-sitemap'
+import Layouts from 'vite-plugin-vue-layouts'
 import matter from 'gray-matter'
+import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import anchor from 'markdown-it-anchor'
+import Markdown from 'unplugin-vue-markdown/vite'
 import LinkAttributes from 'markdown-it-link-attributes'
 import UnoCSS from 'unocss/vite'
+import VueMacros from 'unplugin-vue-macros/vite'
+import { VitePWA } from 'vite-plugin-pwa'
+import VueRouter from 'unplugin-vue-router/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
+import WebfontDownload from 'vite-plugin-webfont-dl'
+
+import anchor from 'markdown-it-anchor'
 
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
-import { slugify } from './scripts/slugify'
+import { slugify } from './src/scripts/slugify'
 
 export default defineConfig({
   resolve: {
@@ -34,29 +39,65 @@ export default defineConfig({
     ],
   },
   plugins: [
-    UnoCSS(),
-
-    Vue({
-      include: [/\.vue$/, /\.md$/],
-      reactivityTransform: true,
+    VueMacros({
+      plugins: {
+        vue: Vue({
+          include: [/\.vue$/, /\.md$/],
+        }),
+      },
     }),
 
-    Pages({
-      extensions: ['vue', 'md'],
-      dirs: 'pages',
+    // https://github.com/posva/unplugin-vue-router
+    VueRouter({
+      extensions: ['.vue', '.md'],
+      dts: 'src/typed-router.d.ts',
       extendRoute(route) {
-        const path = resolve(__dirname, route.component.slice(1))
+        const path = route.components.get('default') ?? ''
 
-        if (path.endsWith('.md') && path.split('/').pop() !== 'projects.md') {
+        if (!path.includes('projects.md') && path.endsWith('.md')) {
           const md = fs.readFileSync(path, 'utf-8')
           const { data } = matter(md)
           route.meta = Object.assign(route.meta || {}, { frontmatter: data })
         }
-
-        return route
       },
     }),
 
+    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+    Layouts(),
+
+    // https://github.com/antfu/unplugin-auto-import
+    AutoImport({
+      imports: [
+        'vue',
+        'vue-i18n',
+        '@vueuse/head',
+        '@vueuse/core',
+        VueRouterAutoImports,
+        {
+          'vue-router/auto': ['useLink'],
+        },
+      ],
+      dts: 'src/auto-imports.d.ts',
+      dirs: [
+        'src/composables',
+      ],
+      vueTemplate: true,
+    }),
+
+    // https://github.com/antfu/unplugin-vue-components
+    Components({
+      // allow auto load markdown components under `./src/components/`
+      extensions: ['vue', 'md'],
+      // allow auto import and register components used in markdown
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      dts: 'src/components.d.ts',
+    }),
+
+    // https://github.com/antfu/unocss
+    // see unocss.config.ts for config
+    UnoCSS(),
+
+    // https://github.com/mdit-vue/unplugin-vue-markdown
     Markdown({
       wrapperComponent: 'post',
       wrapperClasses: 'prose m-auto',
@@ -64,13 +105,14 @@ export default defineConfig({
       markdownItOptions: {
         quotes: '""\'\'',
       },
-      markdownItSetup(md) {
-        md.use(Shiki, {
-          theme: {
+      async markdownItSetup(md) {
+        md.use(await Shiki({
+          defaultColor: false,
+          themes: {
             light: 'vitesse-light',
             dark: 'vitesse-dark',
           },
-        })
+        }))
         md.use(anchor, {
           slugify,
           permalink: anchor.permalink.linkInsideHeader({
@@ -94,43 +136,54 @@ export default defineConfig({
       },
     }),
 
-    AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-        '@vueuse/core',
-        '@vueuse/head',
-      ],
+    // https://github.com/antfu/vite-plugin-pwa
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
+      manifest: {
+        name: 'Alec Ibarra',
+        short_name: 'Alec Ibarra',
+        background_color: '#121212',
+        theme_color: '#121212',
+        icons: [
+          {
+            src: '/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
     }),
 
-    Components({
-      extensions: ['vue', 'md'],
-      dts: true,
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      resolvers: [
-        IconsResolver({
-          componentPrefix: '',
-        }),
-      ],
-    }),
-
-    Icons({
-      defaultClass: 'inline',
-      defaultStyle: 'vertical-align: sub;',
-    }),
+    // https://github.com/feat-agency/vite-plugin-webfont-dl
+    WebfontDownload(),
   ],
 
-  build: {
-    rollupOptions: {
-      onwarn(warning, next) {
-        if (warning.code !== 'UNUSED_EXTERNAL_IMPORT')
-          next(warning)
-      },
+  // https://github.com/antfu/vite-ssg
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+    crittersOptions: {
+      reduceInlineStyles: false,
+    },
+    onFinished() {
+      generateSitemap()
     },
   },
 
-  ssgOptions: {
-    formatting: 'minify',
-    format: 'cjs',
+  ssr: {
+    // workaround until they support native ESM
+    noExternal: ['workbox-window'],
   },
 })

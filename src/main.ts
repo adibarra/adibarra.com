@@ -4,38 +4,23 @@ import './styles/prose.css'
 import './styles/markdown.css'
 import 'uno.css'
 
-import autoRoutes from 'pages-generated'
-import NProgress from 'nprogress'
+import type { UserModule } from './types'
+
 import { ViteSSG } from 'vite-ssg'
-import dayjs from 'dayjs'
-import LocalizedFormat from 'dayjs/plugin/localizedFormat.js'
+import { routes } from 'vue-router/auto-routes'
+import { setupLayouts } from 'virtual:generated-layouts'
 import App from './App.vue'
 
-const routes = autoRoutes.map((i) => {
-  return {
-    ...i,
-    alias: i.path.endsWith('/')
-      ? `${i.path}index.html`
-      : `${i.path}.html`,
-  }
-})
-
-function scrollBehavior(to: any, from: any, savedPosition: any) {
-  if (savedPosition)
-    return savedPosition
-  else
-    return { top: 0 }
-}
-
+// https://github.com/antfu/vite-ssg
 export const createApp = ViteSSG(
   App,
-  { routes, scrollBehavior },
-  ({ router, isClient }) => {
-    dayjs.extend(LocalizedFormat)
-
-    if (isClient) {
-      router.beforeEach(() => { NProgress.start() })
-      router.afterEach(() => { NProgress.done() })
-    }
+  {
+    routes: setupLayouts(routes),
+    base: import.meta.env.BASE_URL,
+  },
+  (ctx) => {
+    // install all modules under `modules/`
+    Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
+      .forEach(i => i.install?.(ctx))
   },
 )

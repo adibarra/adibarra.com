@@ -8,5 +8,6 @@ dist-ssr
 .vite-ssg-temp
 components.d.ts
 auto-imports.d.ts
-*/posts/*
-*/assets/*
+**/assets/*
+**/posts/*
+!**/posts/index.md

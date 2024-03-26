@@ -5,7 +5,7 @@ plum: true
 ---
 
 <figure>
-  <img src="/assets/images/resume.png" alt="Resume - Alec Ibarra" rounded-lg>
+  <img src="/assets/resume/resume.png" alt="Resume - Alec Ibarra" rounded-lg>
   <figcaption class="caption">
     <a
       href="assets/pdfs/Resume - Alec Ibarra.pdf"
