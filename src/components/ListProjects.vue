@@ -9,7 +9,7 @@ defineProps<{
     <h4 mt-10 font-bold>
       {{ key }}
     </h4>
-    <div class="project-grid" py-2 mx--3 gap-2>
+    <div class="project-grid" mx--3 gap-2 py-2>
       <a
         v-for="item, idx in projects[key]"
         :key="idx"
@@ -20,7 +20,7 @@ defineProps<{
         class="item"
         relative flex items-center
       >
-        <div v-if="item.icon" pt-2 pr-5>
+        <div v-if="item.icon" pr-5 pt-2>
           <!-- Custom icons used on this page go here -->
           <div text-3xl opacity-50 :class="item.icon || 'i-carbon-unknown'" />
         </div>
@@ -28,7 +28,7 @@ defineProps<{
           <div text-normal>{{ item.name }}</div>
           <div
             class="desc"
-            text-sm opacity-50 font-normal
+            text-sm font-normal opacity-50
             v-html="item.desc"
           />
         </div>

@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-
 const props = defineProps<{
   to: string
 }>()
 
-const isExternalLink = computed(() => {
-  return typeof props.to === 'string' && props.to.startsWith('http')
-})
+const isExternalLink = computed(() => props.to.startsWith('http'))
 </script>
 
 <template>
@@ -16,6 +12,7 @@ const isExternalLink = computed(() => {
     v-bind="$attrs"
     :href="to"
     target="_blank"
+    rel="noopener"
   >
     <slot />
   </a>

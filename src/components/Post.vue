@@ -1,6 +1,4 @@
 <script setup lang='ts'>
-import { formatDate } from '~/logic'
-
 const { frontmatter } = defineProps({
   frontmatter: {
     type: Object,
@@ -66,14 +64,14 @@ onMounted(() => {
     <p v-if="frontmatter.date" class="op-50 !-mt-2">
       {{ formatDate(frontmatter.date) }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
     </p>
-    <p v-if="frontmatter.subtitle" class="op-50 !-mt-6 italic">
+    <p v-if="frontmatter.subtitle" class="italic op-50 !-mt-6">
       {{ frontmatter.subtitle }}
     </p>
   </div>
   <article ref="content">
     <slot />
   </article>
-  <div v-if="route.path !== '/'" class="prose m-auto mt-8 mb-8">
+  <div v-if="route.path !== '/'" class="prose m-auto mb-8 mt-8">
     <router-link
       :to="route.path.split('/').slice(0, -1).join('/') || '/'"
       class="font-mono no-underline op-50 hover:op-75"

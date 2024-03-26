@@ -11,7 +11,7 @@ defineProps<{
     <a
       :href="`https://github.com/${repo}`"
       target="_blank"
-      opacity-50 ml-1
+      ml-1 opacity-50
     >
       {{ name || (repo.startsWith('adibarra/') ? repo.slice(6) : repo) }}
     </a>
