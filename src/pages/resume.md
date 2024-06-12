@@ -12,7 +12,7 @@ plum: true
   >
   <figcaption class="caption">
     <a
-      href="assets/resume/Resume - Alec Ibarra.pdf"
+      href="/assets/resume/Resume - Alec Ibarra.pdf"
       target="_blank"
       rel="noopener"
     >
