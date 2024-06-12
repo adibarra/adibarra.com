@@ -8,7 +8,7 @@ plum: true
   <img src="/assets/resume/resume.png" alt="Resume - Alec Ibarra" rounded-lg>
   <figcaption class="caption">
     <a
-      href="assets/pdfs/Resume - Alec Ibarra.pdf"
+      href="assets/resume/Resume - Alec Ibarra.pdf"
       target="_blank"
       rel="noopener"
     >
