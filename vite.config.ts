@@ -109,10 +109,11 @@ export default defineConfig({
         md.use(await Shiki({
           defaultColor: false,
           themes: {
-            light: 'vitesse-light',
             dark: 'vitesse-dark',
+            light: 'vitesse-light',
           },
         }))
+
         md.use(anchor, {
           slugify,
           permalink: anchor.permalink.linkInsideHeader({
@@ -138,6 +139,7 @@ export default defineConfig({
 
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
+      selfDestroying: true,
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
