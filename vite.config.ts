@@ -2,7 +2,7 @@ import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
 import Vue from '@vitejs/plugin-vue'
-import Shiki from '@shikijs/markdown-it'
+import MarkdownItShiki from '@shikijs/markdown-it'
 import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import matter from 'gray-matter'
@@ -106,7 +106,7 @@ export default defineConfig({
         quotes: '""\'\'',
       },
       async markdownItSetup(md) {
-        md.use(await Shiki({
+        md.use(await MarkdownItShiki({
           defaultColor: false,
           themes: {
             dark: 'vitesse-dark',
