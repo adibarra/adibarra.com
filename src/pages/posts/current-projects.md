@@ -1,5 +1,6 @@
 ---
-title: My Current Projects
+title: Blog | My Current Projects
+display: My Current Projects
 date: 2022-12-05T05:00:00Z
 lang: en
 duration: 5min

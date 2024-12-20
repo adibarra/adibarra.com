@@ -1,5 +1,6 @@
 ---
-title: Using Cloudflare with your Website
+title: Blog | Using Cloudflare with your Website
+display: Using Cloudflare with your Website
 date: 2023-2-30T05:00:00Z
 lang: en
 duration: 10min

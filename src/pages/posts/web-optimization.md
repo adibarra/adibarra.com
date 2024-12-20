@@ -1,5 +1,6 @@
 ---
-title: Optimizing a Website
+title: Blog | Optimizing a Website
+display: Optimizing a Website
 date: 2022-10-25T05:00:00Z
 lang: en
 duration: 10min
