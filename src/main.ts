@@ -1,26 +1,33 @@
+import type { UserModule } from '~/types'
+import { createHead } from '@unhead/vue'
+import { setupLayouts } from 'virtual:generated-layouts'
+import { createRouter, createWebHistory } from 'vue-router'
+import { routes } from 'vue-router/auto-routes'
+import App from '~/App.vue'
+
 import '@unocss/reset/tailwind.css'
-import './styles/main.css'
+
+import 'shikiji-twoslash/style-rich.css'
 import './styles/prose.css'
 import './styles/markdown.css'
 import 'uno.css'
 
-import type { UserModule } from './types'
+const head = createHead()
 
-import { ViteSSG } from 'vite-ssg'
-import { routes } from 'vue-router/auto-routes'
-import { setupLayouts } from 'virtual:generated-layouts'
-import App from './App.vue'
+// create the router instance
+const router = createRouter({
+  history: createWebHistory(),
+  routes: setupLayouts(routes),
+})
 
-// https://github.com/antfu/vite-ssg
-export const createApp = ViteSSG(
-  App,
-  {
-    routes: setupLayouts(routes),
-    base: import.meta.env.BASE_URL,
-  },
-  (ctx) => {
-    // install all modules under `modules/`
-    Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
-      .forEach(i => i.install?.(ctx))
-  },
-)
+// Create the Vue app instance
+const app = createApp(App)
+
+// install all modules under `modules/`
+Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
+  .forEach(i => i.install?.({ app, router }))
+
+// mount the app
+app.use(router)
+app.use(head)
+app.mount('#app')

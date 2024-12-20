@@ -12,9 +12,9 @@ export function slugify(str: string): string {
   // replace special characters
     .replace(rSpecial, '-')
   // remove duplicate separators
-    .replace(/\-{2,}/g, '-')
+    .replace(/-{2,}/g, '-')
   // remove prefixed and trailing separators
-    .replace(/^\-+|\-+$/g, '')
+    .replace(/^-+|-+$/g, '')
   // doesn't start with a number
     .replace(/^(\d)/, '_$1')
   // lowercase

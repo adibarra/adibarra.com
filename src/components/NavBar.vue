@@ -5,13 +5,13 @@
       focusable="false"
       absolute m-6 h-10 w-10 select-none outline-none lg:fixed
     >
-      <img :src="`/logo${ isDark ? '-dark' : '' }.svg`" alt="logo">
+      <img :src="`/favicon${isDark ? '-dark' : ''}.svg`" alt="favicon">
     </router-link>
-    <nav flex flex-row gap-5 p-8 items-center>
+    <nav flex flex-row items-center gap-5 p-8>
       <div grow />
       <router-link to="/" title="Home">
         <span lt-md:hidden>Home</span>
-        <div i-carbon-home md:hidden />
+        <div i-carbon:home md:hidden />
       </router-link>
       <router-link to="/projects" title="Projects">
         <span lt-md:hidden>Projects</span>
@@ -28,7 +28,7 @@
       <a href="https://github.com/adibarra" title="GitHub" target="_blank" rel="noopener">
         <div i-uil-github-alt />
       </a>
-      <a href="mailto://hello@adibarra.com" title="Email" target="_blank" rel="noopener">
+      <a href="mailto://adibarra00@gmail.com" title="Email" target="_blank" rel="noopener">
         <div i-feather-mail />
       </a>
       <a

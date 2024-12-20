@@ -2,16 +2,23 @@
 <html class="dark" lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="canonical" href="https://adibarra.com/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="author" content="Alec Ibarra" />
+    <link rel="canonical" href="https://adibarra.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Alec Ibarra's personal website" />
+    <meta name="og:title" content="Alec Ibarra" />
+    <meta name="og:description" content="Alec Ibarra's personal website" />
+    <meta name="og:image" content="/og-icon.png" />
+    <meta name="twitter:card" content="summary" />
     <title>Alec Ibarra</title>
+    <style>
+      html {
+        color: white;
+        background: black;
+      }
+    </style>
 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-19DEWQB48M"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-19DEWQB48M"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag() {
@@ -21,8 +28,8 @@
       gtag('config', 'G-19DEWQB48M')
     </script>
   </head>
-  <body font-sans text-gray-700 dark:text-gray-200>
-    <div id="app"></div>
+  <body>
+    <div id="app" />
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

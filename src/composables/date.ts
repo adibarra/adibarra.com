@@ -6,3 +6,9 @@ export function formatDate(d: string | Date) {
     return date.format('MMM D')
   return date.format('MMM D, YYYY')
 }
+export function getYear(a: Date | string | number) {
+  return new Date(a).getFullYear()
+}
+export function isSameYear(a: Date | string | number, b: Date | string | number) {
+  return a && b && getYear(a) === getYear(b)
+}

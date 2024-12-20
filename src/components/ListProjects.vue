@@ -5,51 +5,60 @@ defineProps<{
 </script>
 
 <template>
-  <template v-for="key in Object.keys(projects)" :key="key">
-    <h4 mt-10 font-bold>
-      {{ key }}
-    </h4>
-    <div class="project-grid" mx--3 gap-2 py-2>
-      <a
-        v-for="item, idx in projects[key]"
+  <template v-for="category in Object.keys(projects)" :key="category">
+    <h2 mt-10 font-bold>
+      {{ category }}
+    </h2>
+    <div
+      class="grid-cols-[repeat(auto-fit,minmax(250px,1fr))]"
+      grid mx--3 gap-2 py-2
+    >
+      <div
+        v-for="item, idx in projects[category]"
         :key="idx"
-        :href="item.link"
-        :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
         :title="item.name"
-        target="_blank"
-        class="item"
-        relative flex items-center
+        class="hover:bg-[#ffffff08]"
+        flex items-center rounded-lg px-4 py-3 text-lg
       >
-        <div v-if="item.icon" pr-5 pt-2>
-          <!-- Custom icons used on this page go here -->
-          <div text-3xl opacity-50 :class="item.icon || 'i-carbon-unknown'" />
-        </div>
-        <div flex-auto>
-          <div text-normal>{{ item.name }}</div>
+        <div pr-5>
           <div
-            class="desc"
-            text-sm font-normal opacity-50
+            :class="item.icon || 'i-carbon:unknown'"
+            text-3xl opacity-60
+          />
+        </div>
+
+        <div flex-auto>
+          <div flex gap-2>
+            <span text--c-accent font-600 v-html="item.name" />
+            <div grow />
+            <a
+              v-if="item.link"
+              :href="item.link"
+              :title="item.name"
+              target="_blank" rel="noopener"
+              class="!border-none"
+              custom-icon-btn
+            >
+              <div i-carbon:link />
+            </a>
+            <a
+              v-if="item.repo"
+              :href="item.repo"
+              title="GitHub Repository"
+              target="_blank" rel="noopener"
+              class="!border-none"
+              custom-icon-btn
+            >
+              <div i-carbon:logo-github />
+            </a>
+          </div>
+
+          <div
+            text-sm font-normal opacity-60
             v-html="item.desc"
           />
         </div>
-      </a>
+      </div>
     </div>
   </template>
 </template>
-
-<style scoped>
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.project-grid a.item {
-  padding: 0.8em 1em;
-  background: transparent;
-  font-size: 1.1rem;
-}
-
-.project-grid a.item:hover {
-  background: #88888808;
-}
-</style>
