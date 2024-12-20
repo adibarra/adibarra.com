@@ -43,7 +43,7 @@ However, the data was not in a format that was easy to work with. The Registrar'
 
 ### Parsing the Data
 
-I decided to use Python to extract the data from the PDFs. I have a good amount of experience with the language, and I knew there was a [library available](https://pypdf2.readthedocs.io/en/latest/index.html) for extracting data from PDFs. However, I quickly discovered that the resultant PDF data were difficult to parse. The PDFs were not in a consistent format across the years. Some of the data, specifically the names of professors, was even missing for specific courses. All this translated to an unbelievable amount of manual work or many headaches trying to parse the data while dealing with all sorts of edge cases.
+I decided to use Python to extract the data from the PDFs. I have a good amount of experience with the language, and I knew there was a library available (<GithubLink repo="py-pdf/pypdf" />) for extracting data from PDFs. However, I quickly discovered that the resultant PDF data were difficult to parse. The PDFs were not in a consistent format across the years. Some of the data, specifically the names of professors, was even missing for specific courses. All this translated to an unbelievable amount of manual work or many headaches trying to parse the data while dealing with all sorts of edge cases.
 
 After many headaches, I managed to write a parser (<GithubLink repo="adibarra/tamugd-parser" />) that could take the extracted data and convert it into a format that I could use. The parser was not perfect and sometimes missed data, but after multiple revisions, I did manage to fix all of the bugs I found.
 
@@ -206,7 +206,7 @@ I made sure to make the search bar pane as simple as possible. I also wanted use
 
 #### The Main Chart Pane
 
-The main chart pane was the most complicated pane to implement. It would contain a graph showing the average GPA for a course over time, and doing so would require a lot of number crunching on the data returned from the API. I decided to use [Chart.js](https://www.chartjs.org/) to implement the graph. I had some difficulty getting the graph to look how I wanted it to, but after a few hours of tinkering, I got it to look how I wanted and made it responsive.
+The main chart pane was the most complicated pane to implement. It would contain a graph showing the average GPA for a course over time, and doing so would require a lot of number crunching on the data returned from the API. I decided to use <GithubLink repo="chartjs/Chart.js" /> to implement the graph. I had some difficulty getting the graph to look how I wanted it to, but after a few hours of tinkering, I got it to look how I wanted and made it responsive.
 
 <figure>
   <img src="/assets/posts/tamugd-writeup/main-chart-pane.png" alt="The main chart pane with placeholder data" rounded-lg />
@@ -232,7 +232,7 @@ The last part of the settings pane was the year range selector. I wanted to be a
 
 The second to last pane I implemented was the secondary charts pane. This pane would include three smaller charts showing different statistics for the course. The first secondary chart showed the course's min, max, and average GPA. The second showed the breakdown of the grade letters earned for the course, and the third, the relative difficulty score.
 
-Once again, the plots for each of these charts were made using [Chart.js](https://www.chartjs.org/). This pane also resizes itself to stack the charts vertically if the viewport is small. The secondary charts also depended on data from the API, so I had to wait until the number-crunching logic was implemented to fill the charts with the correct numbers.
+Once again, the plots for each of these charts were made using <GithubLink repo="chartjs/Chart.js" />. This pane also resizes itself to stack the charts vertically if the viewport is small. The secondary charts also depended on data from the API, so I had to wait until the number-crunching logic was implemented to fill the charts with the correct numbers.
 
 <figure>
   <img src="/assets/posts/tamugd-writeup/secondary-charts-pane.png" alt="The secondary charts pane" rounded-lg />
@@ -241,7 +241,7 @@ Once again, the plots for each of these charts were made using [Chart.js](https:
 
 #### The Raw Data Table Pane
 
-The final pane I implemented was the raw data table. This pane would contain a table with the raw data for the course, which would be sortable and filterable. I used [GridJS](https://gridjs.io/) to implement the table. This table would draw data directly from what was returned via the API. I also made sure to make the table responsive to look good on mobile devices. The table was also hidden by default since it was so large and would only be shown if the user clicked the "Display Raw Data" button in the settings pane.
+The final pane I implemented was the raw data table. This pane would contain a table with the raw data for the course, which would be sortable and filterable. I used <GithubLink repo="grid-js/gridjs" /> to implement the table. This table would draw data directly from what was returned via the API. I also made sure to make the table responsive to look good on mobile devices. The table was also hidden by default since it was so large and would only be shown if the user clicked the "Display Raw Data" button in the settings pane.
 
 <figure>
   <img src="/assets/posts/tamugd-writeup/raw-data-table-pane.png" alt="The raw data table pane" rounded-lg />

@@ -26,6 +26,21 @@ The original version, which I'll call `TAMUGD` from now on, was written in plain
 
 ### Frontend
 
-One of the biggest changes I made was to use a framework. I decided to go with Vue.js since I've been using it for a while now and I really like it. I also decided to use Vite as the build tool since it's super fast and easy to use. I'm also using [UnoCSS](https://unocss.dev/) for it's fantastic superset of atomic CSS classes. I'm also using TypeScript throughout the entire project.
+One of the biggest changes I made was to use a framework. I decided to go with Vue.js since I've been using it for a while now and I really like it. I also decided to use Vite as the build tool since it's super fast and easy to use. I'm also using <GithubLink repo="unocss/unocss" /> for it's fantastic superset of atomic CSS classes. I'm also using TypeScript throughout the entire project.
 
 All-in-all, this should make the frontend much easier to work with and maintain since I can now use components and a proper set of build tools.
+
+```ts twoslash
+type Framework = 'Vue.js' | 'React' | 'Angular'
+type BuildTool = 'Vite' | 'Webpack' | 'Rollup'
+
+const frontend = {
+  framework: 'Vue.js',
+  buildTool: 'Vite'
+}
+
+const techStack = {
+  frontend
+}
+
+```

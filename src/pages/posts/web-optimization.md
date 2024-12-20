@@ -60,14 +60,14 @@ Minifying is by far the most common optimization technique. It's also the easies
 
 Minifying is the process of removing compressing code. This can include removing whitespace and comments as well as truncating variable names. Some of the more advanced minifiers can even perform tree shaking.
 
-The result is usually a <i fw-600>much</i> smaller file size, which translates to faster load times.
+The result is usually a **much** smaller file size, which translates to faster load times.
 
 <figure>
   <img src="/assets/posts/web-optimization/minify.png" alt="JQuery 3.6.1 minified using UglifyJS 3" rounded-lg dark:invert />
   <figcaption class="caption">JQuery 3.6.1 minified using UglifyJS 3</figcaption>
 </figure>
 
-The best part is that you can do this automatically with a tool like [UglifyJS](https://www.npmjs.com/package/uglify-js). It's practically a one-click solution <i fw-600>and</i> it can be integrated into your build process.
+The best part is that you can do this automatically with a tool like <GithubLink repo="mishoo/UglifyJS" />. It's practically a one-click solution **and** it can be integrated into your build process.
 
 ### Bundling
 
