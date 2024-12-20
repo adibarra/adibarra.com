@@ -5,10 +5,10 @@ import fs from 'fs-extra'
 import matter from 'gray-matter'
 import anchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
-import MarkdownItShikiji from 'markdown-it-shikiji'
+import Shiki from '@shikijs/markdown-it'
 // @ts-expect-error 7016 - TOC types are missing
 import TOC from 'markdown-it-table-of-contents'
-import { rendererRich, transformerTwoslash } from 'shikiji-twoslash'
+import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -92,7 +92,7 @@ export default defineConfig({
         quotes: '""\'\'',
       },
       async markdownItSetup(md) {
-        md.use(await MarkdownItShikiji({
+        md.use(await Shiki({
           themes: {
             dark: 'vitesse-dark',
             light: 'vitesse-light',
