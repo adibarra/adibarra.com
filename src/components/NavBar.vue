@@ -1,5 +1,5 @@
 <template>
-  <header z-40>
+  <header z-40 text--c-text>
     <router-link
       to="/"
       focusable="false"
@@ -28,7 +28,7 @@
       <a href="https://github.com/adibarra" title="GitHub" target="_blank" rel="noopener">
         <div i-uil-github-alt />
       </a>
-      <a href="mailto://adibarra00@gmail.com" title="Email" target="_blank" rel="noopener">
+      <a href="mailto:adibarra00@gmail.com" title="Email" target="_blank" rel="noopener">
         <div i-feather-mail />
       </a>
       <a
