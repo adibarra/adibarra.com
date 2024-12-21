@@ -1,25 +1,25 @@
 ---
 title: Blog | Building the TAMU Grades Website
 display: Building the TAMU Grades Website
-date: 2024-12-20T05:00:00Z
+date: 2024-12-21T05:00:00Z
 lang: en
 duration: 20min
 subtitle: A writeup on how I built the TAMU Grades website.
-upcoming: false
+upcoming: true
 ---
 
 [[toc]]
 
 ## Wait, Again?
 
-Yup, that's right, I re-wrote the original TAMU Grade Distribution website that I made in 2022 and posted about [here](/posts/tamugd-writeup). My goal with the original site was just to learn about web dev, and as a result, the code isn't great, and its UI/UX isn't much better.
+Yup, that's right, I re-wrote the original TAMU Grade Distribution website that I made in 2022 and posted about [here](/posts/tamugd-writeup). My goal with the original site was to learn about web development, and as a result, the code isn't great, and its UI/UX isn't much better.
 
 <figure>
   <img src="/assets/posts/tamugd-writeup/final-product.png" alt="Screenshot of the original version" rounded-lg dark:border-1 border--c-tertiary />
   <figcaption class="caption">Screenshot of the original version</figcaption>
 </figure>
 
-However, ever since I built it, it's been getting a lot of traffic. So, I've decided to re-design it from the ground up with all the knowledge I've gained over the past year or two.
+Since then, the site has been getting a lot of traffic. So, I've decided to re-design it from the ground up using the knowledge I've gained over the past year or two.
 
 ## Goals
 
@@ -33,24 +33,39 @@ The main goals for this re-write are:
 
 ## Tech Stack
 
-The original version, which I'll call `TAMUGD` from now on, was written in plain JS, HTML, and CSS. There was no framework, no build tools, or anything else due to my lack of experience at the time. I didn't know how to set any of that up or that it existed, for that matter. The project was just a bunch of files I would edit, manually minify, and then upload to the server.
+The original version was built using plain JavaScript, HTML, and CSS. It lacked frameworks, build tools, or any modern workflow due to my inexperience at the time. The project was just a bunch of manually edited and minified files.
 
-Because of this, the codebase was a mess and hard to maintain. So, I decided to use a proper tech stack for the new version.
+This approach led to a messy and unmaintainable codebase. So, I decided to use a proper tech stack for the new version.
 
 ### Frontend
 
-One of the biggest changes I made was to use a framework for the frontend. I decided to go with <GithubLink repo="vuejs/vue" /> since I've been using it for a while now and really like it. I also decided to use <GithubLink repo="vitejs/vite" /> as the build tool since it's super fast and easy to use. I'm also using <GithubLink repo="unocss/unocss" /> for its fantastic superset of atomic CSS classes. I'm also using TypeScript throughout the entire project.
+One of the biggest changes was adopting a frontend framework. I chose <GithubLink repo="vuejs/vue" />, which I've been using for a while and really enjoy. I also decided to use <GithubLink repo="vitejs/vite" /> as the build tool since it's super fast and easy to use. Additionally, I decided to use <GithubLink repo="unocss/unocss" /> for its fantastic superset of atomic CSS classes. I also utilized TypeScript throughout the application to catch errors early and improve code quality.
 
-All-in-all, this makes the frontend much easier to work with and maintain since I can now use components and a proper set of build tools. It makes the codebase much cleaner and easier to understand. It also makes it easier to add new features in the future.
+This modern setup makes the frontend **much** more maintainable and easier to work with. Using components and build tools has helped me clean up the codebase, making it more readable and extensible for future improvements.
+
+Another decision I made was to not use a UI framework. Instead I wanted to build the UI from scratch to learn more about CSS and design. Because of this, the new version has a more consistent look and feel compared to the original.
 
 ### Backend
 
-This time around I decided to use <GithubLink repo="fastify/fastify" /> as the backend framework. I chose Fastify because I'd heard good things about it and wanted to try it out. Additionally, instead of using MySQL for the database, I switched to using PostgreSQL since it's more powerful and more widely used commercially.
+This time around I decided to use <GithubLink repo="fastify/fastify" /> as the backend framework. I also switched from MySQL to PostgreSQL, which is more powerful and widely used in production environments.
+
+The backend is responsible for fetching data from the database and serving it to the frontend in both versions. However, the new backend also handles the scraping and parsing of the grade distribution data, which was previously done manually with a different script.
 
 ### Automation and Deployment
 
-One major improvement I implemented was building automation. Now, whenever I push changes to the GitHub repository, GitHub Actions are triggered to handle the process. These actions check out the current code and build two Docker images: one for the backend and one for the frontend.
+One of the most significant improvements I made was automating the build and deployment processes. Now, whenever I push changes to the repo, GitHub Actions are triggered. These actions build two Docker images: one for the backend and one for the frontend.
 
-Once the images are built, my deployment server automatically pulls them and deploys the updated app. This setup allows me to update the entire application simply by pushing changes to the repository, eliminating the need for manual redeployment.
+My deployment server automatically pulls these images and deploys the updated application. This setup allows me to easily deploy changes automatically without needing to worry about the build process.
 
-Additionally, using Docker images in both development and production environments ensures consistency. If the project runs in development, it will run the same in production, removing potential issues caused by differences between the two environments.
+Using Docker also helps with the portability of the application. It helps in ensuring consistency between development and production environments.
+
+## Architecture
+
+The old version of the site was divided into a static frontend and a backend, which served the frontend and handled database queries. The new version, however, keeps the two entirely separate. This is because the app is now built into two separate images. The frontend image includes an Nginx server that serves the static files generated by Vite, while the backend image includes the Fastify server that only serves the API and runs background tasks.
+
+The project now uses a monorepo architecture with over 10 packages. This allows me to share code between the frontend and backend, such as types and constants while keeping them separate. It also makes it easier to manage dependencies and run scripts across the application.
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Architecture diagram" rounded-lg />
+  <figcaption class="caption">Architecture diagram</figcaption>
+</figure>
