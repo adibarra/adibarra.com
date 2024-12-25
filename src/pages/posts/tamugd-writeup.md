@@ -1,7 +1,7 @@
 ---
 title: Blog | Creating the TAMU Grade Distribution Website
 display: Creating the TAMU Grade Distribution Website
-date: 2022-10-20T05:00:00Z
+date: 2022-10-20T06:00:00Z
 lang: en
 duration: 20min
 subtitle: A look at the process of creating the TAMU Grade Distribution Website.

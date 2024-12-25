@@ -1,7 +1,7 @@
 ---
 title: Blog | Optimizing a Website
 display: Optimizing a Website
-date: 2022-10-25T05:00:00Z
+date: 2022-10-25T06:00:00Z
 lang: en
 duration: 10min
 subtitle: A crash course into website optimization.
