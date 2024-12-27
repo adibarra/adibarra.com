@@ -5,11 +5,11 @@ defineProps<{
 </script>
 
 <template>
-  <span relative>
-    <div i-carbon:email absolute top-0.5 text--c-text />
+  <span text-nowrap text--c-text>
+    <div i-carbon:email relative top-1 flex-inline />
     <a
       :href="`mailto:${to}`"
-      ml-5.5
+      ml-1
     >
       {{ to }}
     </a>

@@ -5,13 +5,13 @@ defineProps<{
 </script>
 
 <template>
-  <span relative text-wrap>
-    <div i-carbon:logo-github absolute top-0.5 text--c-text />
+  <span text-nowrap text--c-text>
+    <div i-carbon:logo-github relative top-0.8 flex-inline />
     <a
       :href="`https://github.com/${repo}`"
       target="_blank"
       rel="noopener"
-      ml-5.5
+      ml-1
     >
       {{ repo }}
     </a>
