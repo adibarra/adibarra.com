@@ -1,7 +1,7 @@
 ---
 title: Blog | Building the TAMU Grades Website
 display: Building the TAMU Grades Website
-date: 2024-12-21T05:00:00Z
+date: 2025-01-01T06:00:00Z
 lang: en
 duration: 20min
 subtitle: A writeup on how I built the TAMU Grades website.
@@ -28,7 +28,7 @@ The main goals for this re-write are:
 > 1. **Improve UI/UX**: I want to make the new version much more visually appealing, ergonomic, and easier to use.
 > 2. **Improve Performance**: I want to improve performance by using modern web technologies.
 > 3. **Improve Code Quality**: I want to use a framework and build tools to make the codebase more maintainable.
-> 4. **Add New Features**: I want to add new features like a natural language search bar.
+> 4. **Add New Features**: I want to add new features like a natural language search.
 > 5. **Make it Mobile Friendly**: I want the new version to work well on all devices.
 
 ## Tech Stack
@@ -37,17 +37,17 @@ The original version was built using plain JavaScript, HTML, and CSS. It lacked 
 
 This approach led to a messy and unmaintainable codebase. So, I decided to use a proper tech stack for the new version.
 
-### Frontend
+### Frontend Development
 
-One of the biggest changes was adopting a frontend framework. I chose <GithubLink repo="vuejs/vue" />, which I've been using for a while and really enjoy. I also decided to use <GithubLink repo="vitejs/vite" /> as the build tool since it's super fast and easy to use. Additionally, I decided to use <GithubLink repo="unocss/unocss" /> for its fantastic superset of atomic CSS classes. I also utilized TypeScript throughout the application to catch errors early and improve code quality.
+One of the biggest changes was adopting a frontend framework. I chose <GithubLink repo="vuejs/vue" />, which I've been using for a while and really enjoy. I also decided to use <GithubLink repo="vitejs/vite" /> as the build tool since it's super fast and easy to use. Additionally, I decided to use <GithubLink repo="unocss/unocss" /> for its fantastic superset of atomic CSS classes to help style the site. I also utilized TypeScript throughout the application to catch errors early and improve code quality.
 
 This modern setup makes the frontend **much** more maintainable and easier to work with. Using components and build tools has helped me clean up the codebase, making it more readable and extensible for future improvements.
 
-Another decision I made was to not use a UI framework. Instead I wanted to build the UI from scratch to learn more about CSS and design. Because of this, the new version has a more consistent look and feel compared to the original.
+Another decision I made was to not use a UI framework. Instead, I wanted to build the UI from scratch to learn more about CSS and design. Because of this, the new version has a more consistent look and feel compared to the original.
 
-### Backend
+### Backend Development
 
-This time around I decided to use <GithubLink repo="fastify/fastify" /> as the backend framework. I also switched from MySQL to PostgreSQL, which is more powerful and widely used in production environments.
+This time around, I decided to use <GithubLink repo="fastify/fastify" /> as the backend framework. I also switched from MySQL to PostgreSQL, which is more powerful and widely used in production environments.
 
 The backend is responsible for fetching data from the database and serving it to the frontend in both versions. However, the new backend also handles the scraping and parsing of the grade distribution data, which was previously done manually with a different script.
 
@@ -69,3 +69,144 @@ The project now uses a monorepo architecture with over 10 packages. This allows 
   <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Architecture diagram" rounded-lg />
   <figcaption class="caption">Architecture diagram</figcaption>
 </figure>
+
+This new architecture makes the project much more organized and easier to work with. It also allows me to scale the project more easily in the future by adding more packages for different parts of the application. For example, in the future, I could add a package for handling user authentication and import it anywhere in the application.
+
+## Data Sourcing
+
+This time around, I decided that I had two main goals for the data sourcing:
+
+> 1. **Automate the Process**: I wanted to automate the scraping and parsing of the grade distribution data.
+> 2. **Organize more Data**: I wanted to scrape and store more data than just the grade distributions.
+
+### Finding the Data
+
+The first step in the process was to find the data. For the grade distribution data, I once again opted to scrape PDFs from the Texas A&M Registrar's website. This script simply scrapes the main page and generates a list of URLs to PDFs that contain the grade distributions for each college, department, course, semester, and year.
+
+However, the data that's available on the Registrar's website is limited. It only includes data from the past few years and doesn't include any course descriptions or information about professors. Due to this, I decided I also needed to scrape the course catalog pages and faculty directories to get more data.
+
+Even with all this data, I found there were gaps in the data. For instance, some courses appeared in the grade distribution data but not in the course catalog. After some thought, I realized this was because the catalog only lists courses currently being offered. Due to this, despite having grade distribution data spanning many years, I lacked descriptions for those which were no longer offered.
+
+In order to fill these gaps, I plan to scrape archived versions of the course catalog pages to get descriptions for these courses. This will allow me to provide more context to the grade distributions and make the site more useful.
+
+### Scraping the Data
+
+Next up, I needed to develop a method to scrape all of this data from the different data sources. In order to do this, I decided to simply write scrapers for each of the different data sources. These scrapers would then be run periodically and collect all of the raw data for further processing.
+
+In this step, I also decided to implement a caching system to prevent unnecessary requests to the data sources. This would prevent the application from making requests for data that is already present or hasn't changed since the last request.
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Caching scraper requests" rounded-lg />
+  <figcaption class="caption">Caching scraper requests</figcaption>
+</figure>
+
+Preventing these requests helps minimize the load on the data sources to near zero and massively speeds up the scraping process. This is especially important when scraping the grade distribution data, as the PDFs can be quite large and take a long time to download.
+
+### Parsing the Data
+
+Once the data has been collected, it needs to be parsed and stored in a usable format. This is accomplished by a series of parsers that take the raw data and convert it into a format that can be stored in the database.
+
+For the majority of the data sources, this process is quite straightforward. It simply uses <GithubLink repo="cheeriojs/cheerio" /> to parse the HTML which was previously scraped and extract the relevant information. However, for the grade distribution data, this process is a bit more complex.
+
+The grade distribution data is stored in PDFs which are notoriously difficult to parse. In order to extract the data from these PDFs, I decided to use <GithubLink repo="mozilla/pdf.js" />. This library is the golden standard for rendering PDFs in browsers, but more importantly, it also provides an API for extracting text from PDFs.
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The data parser in action" rounded-lg />
+  <figcaption class="caption">The data parser in action</figcaption>
+</figure>
+
+Once the text has been extracted from the PDFs, I then run it though a secondary parser which converts the raw text into a more structured format. This is where the real heavy lifting happens. The parser needs to be able to handle a wide variety of different formats and structures in order to extract the grade distribution data.
+
+This is because over the years, there have been many different formats used for the grade distribution data. While they mostly look the same, there are subtle differences in the way the data is presented. For example, some colleges list the grades using letters (A, B, C, etc.), while others include the +/- modifiers (A+, A, A-, etc.). Additionally, some of the PDFs are simply arranged differently, with different columns or headers because they include graduate courses.
+
+In order to handle all of these different formats, the parser needs to be able to detect and adapt to these differences. This is accomplished by using a series of regular expressions and heuristics to identify the format of the data. Once the format has been identified, the system will load a corresponding parser that is able to extract the data from that format. This allows the system to be flexible and adapt to new formats as they are encountered.
+
+The parsed data is stored in an intermediate JSON format. This format aims to be a 1:1 representation of all of the data as it appears in the PDFs. This approach simplifies debugging and verification before the data is entered into the database.
+
+### Storing the Data
+
+In order to store all of this data, I was going to need a much more complex database schema than the original. The original schema was very simple. It was essentially a single table with columns for the course, semester, year, and grade distribution data.
+
+However, the new schema needed to be able to store much more data and maintain the relationships between them. I ended up with a schema that looks something like this:
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The new database schema" rounded-lg />
+  <figcaption class="caption">The new database schema</figcaption>
+</figure>
+
+This new schema allows me to store much more data, such as course descriptions, subjects, professors, and departments. This data can be used to provide more context to the grade distributions and allow for more advanced search functionality.
+
+Additionally, it will allow me to build new features in the future, such as the ability to view grade distributions for specific professors or departments.
+
+However, storing more data comes with its own set of challenges. The more data you store, the more complex the queries become. This can lead to slower performance and scalability issues. To mitigate this, I decided to heavily leverage indexes in order to massively speed up the queries. Additionally, I tested queries extensively to ensure they were as performant as possible.
+
+Testing the queries helped identify bottlenecks and optimize them. I was able to reduce some queries from taking 500ms to less than 10ms by adding the right indexes and restructuring the queries.
+
+## API Endpoints
+
+The API is the bridge between the frontend and the database. It's responsible for fetching data from the database and serving it to the frontend in a usable format.
+
+In the original version, this API was very simple. It consisted of two endpoints. The first was responsible for fetching all of the available departments. The second accepted a department ID and course number and returned the grade distribution data for that course.
+
+The new version of the API has five endpoints.
+
+### Search
+
+The search endpoint allows users to search for courses by name, department, or course number. This endpoint accepts a query parameter and returns a list of courses that match the query.
+
+The search functionality is powered by a full-text search index in the database. This index allows for fast and efficient searching of the course data. Additionally, the search endpoint uses a series of heuristics to rank the results based on relevance. This ensures that the most relevant results are returned first.
+
+Tuning the search endpoint was a challenging task. I had to balance the different parts of the query to ensure that the results returned were always the most relevant. This involved tweaking the weights of the different parts of the query and testing the results to ensure they were accurate.
+
+As mentioned earlier, there was also a lot of query optimization involved. The search endpoint is one of the most complex queries in the system. It involves unions of multiple tables and filtering the results based on a wide variety of criteria. This can lead to slow performance if not optimized correctly.
+
+### Autocomplete
+
+The autocomplete endpoint provides suggestions for course names, departments, and course numbers as the user types. This endpoint is powered by the same full-text search index as the search endpoint. It uses a series of heuristics to generate suggestions based on the user's input.
+
+This endpoint is designed to be as fast as possible since it is meant to be used in real-time as the user types. To achieve this I had to find some creative ways to reduce the number of queries and optimize the ones that were necessary.
+
+### Analyze
+
+The analyze endpoint provides the grade distribution data for a specific course. This endpoint accepts a course ID and returns the grade distribution data for that course.
+
+This endpoint is relatively simple compared to the others. It simply fetches the data from the database and returns it in a usable format. However, it is the core of the application. This means that it must be fast to ensure that the user experience is smooth.
+
+### Shorten
+
+The shorten endpoint generates a shortened URL for a set of user-defined filters. This allows users to share their searches with others by simply sharing a URL. When the URL is visited, the filters are applied, and the results are displayed.
+
+This endpoint is also relatively simple. It checks the database to see if the filters have been used before and returns the existing URL if they have. If not, it generates a new URL and stores it in the database. This allows the system to reuse URLs and prevent duplicates.
+
+The endpoint also keeps track of how many times each URL has been visited. This allows it to intelligently expire old URLs and prevent the database from growing too large over time.
+
+### Expand
+
+The expand endpoint expands a shortened URL and returns the filters used to generate it. This allows users to see the filters that were applied to a search by simply visiting the URL.
+
+This endpoint is the reverse of the shorten endpoint. It simply fetches the filters from the database and returns them in a usable format. This allows the system to recreate the search and display the results to the user.
+
+## UX/UI Design
+
+The UX/UI design was one of the most important aspects of the new version. I wanted to make the site much more visually appealing, ergonomic, and easier to use.
+
+### Design System
+
+As mentioned earlier, I decided not to use a UI framework for the new version. The original site used a mixture of JQuery modules and CSS which created a very inconsistent look and feel. Instead, I wanted to build the UI from scratch to learn more about CSS and design.
+
+The main goal of the new design was to make it clean, simple, and easy to use. I wanted to remove any unnecessary clutter and focus on the core functionality of the site.
+
+### Prototyping
+
+The first thing I did when creating the new design was to create a series of wireframes. These wireframes helped me visualize the layout of the site and plan out the different components.
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Wireframes of the new design" rounded-lg />
+  <figcaption class="caption">Wireframes of the new design</figcaption>
+</figure>
+
+The wireframes were helpful in planning out the different components and how they would interact with each other. They allowed me to experiment with different layouts and designs before committing to a final design. This helped me identify potential issues early on and make changes before they became problems.
+
+
+
+
