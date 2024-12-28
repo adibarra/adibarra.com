@@ -207,7 +207,7 @@ The wireframes were helpful in planning out the different components and how the
 The main page of the site is where users will land when they first visit. I wanted to make this page as clean and simple as possible. So, I decided to take some inspiration from Google's search page and keep the design to a simple search bar.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/wireframe-main.png" alt="Wireframe of the main page" rounded-lg dark:invert />
+  <img src="/assets/posts/tamu-grades-writeup/wireframe-main.png" alt="Wireframe of the main page" rounded-lg />
   <figcaption class="caption">Wireframe of the main page</figcaption>
 </figure>
 
@@ -218,20 +218,25 @@ At the top of the page, I also included a series of links to other parts of the 
 Hitting the search button on the main page will take the user to the search page where they can view the results of their search. This page uses the same search bar at the top of the page. However, it utilizes the rest of the available space to display the results. This allows users to quickly scan through the results and find the course they are looking for.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/wireframe-search.png" alt="Wireframe of the search page" rounded-lg dark:invert />
+  <img src="/assets/posts/tamu-grades-writeup/wireframe-search.png" alt="Wireframe of the search page" rounded-lg />
   <figcaption class="caption">Wireframe of the search page</figcaption>
 </figure>
+
+Another important feature of this page is the ability to tell at a glance which courses have certain attributes associated with them. For example, some courses may be crosslisted or be marked as having no data. These tags allows users to quickly identify these courses and filter them out if they are not interested. The results also include the number of credit hours each course is worth, which can be useful for students looking to fulfill specific requirements.
 
 #### Analyze Page
 
 Clicking on any result on the search page will take the user to the analyze page. This page displays all of the grade distribution data for the selected course. It also includes a series of filters that allow users to narrow down the results by semester, year, professor, and other criteria.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/wireframe-analyze.png" alt="Wireframe of the analyze page" rounded-lg dark:invert />
+  <img src="/assets/posts/tamu-grades-writeup/wireframe-analyze.png" alt="Wireframe of the analyze page" rounded-lg />
   <figcaption class="caption">Wireframe of the analyze page</figcaption>
 </figure>
 
-The main focus of this page is to make the graphs and tables as clear and easy to read as possible. However, I also thought it was important that the filters were all easily accessible and intuitive to use.
+The main focus of this page is to make the graphs and tables as clear and easy to read as possible. However, there was also a lot of other information that I wanted to include.
 
-In order to achieve this, I decided to use a series of containers and panes which 
+For example, the page includes a section for the course description, prerequisites, and other information. This allows users to quickly get an overview of the course. Additionally, the page includes many filters that allow users to narrow down the results and focus on specific aspects of the data.
+
+Some of the filters include the ability to filter by semester, year, professor, among other criteria.
+
 
