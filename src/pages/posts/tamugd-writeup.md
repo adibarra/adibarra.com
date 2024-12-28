@@ -1,10 +1,10 @@
 ---
-title: Blog | Creating the TAMU Grade Distribution Website
-display: Creating the TAMU Grade Distribution Website
+title: Blog | Building the TAMU Grade Distribution Website
+display: Building the TAMU Grade Distribution Website
 date: 2022-10-20T06:00:00Z
 lang: en
 duration: 20min
-subtitle: A look at the process of creating the TAMU Grade Distribution Website.
+subtitle: A look at the process of building the TAMU Grade Distribution Website.
 upcoming: false
 ---
 
@@ -283,6 +283,6 @@ After implementing the logic, I could finally put the site together and see the 
 
 This project was a lot of fun to work on. I learned a lot about web development and what goes on under the hood of a website. Overall, I am thrilled with how the site turned out and hope that it will be helpful to students at TAMU. The entire project took me a few weeks to complete from start to finish.
 
-However, as with all projects, it is not entirely finished. There is certainly plenty of new features and improvements that I want to add to the site. I will be working on these in the future and will be sure to create a new post when I do.
+However, as with all projects, it is not entirely finished. There is certainly plenty of new features and improvements that I want to add to the site. I will be working on these in the future and will be sure to write a new post when I do.
 
 If you want to check out the site, you can find it ~~[here](https://gd.adibarra.com)~~ (replaced by new version). If you have any feedback or suggestions for the site, feel free to reach out to me on the project's repo (<GithubLink repo="adibarra/tamugd-website" />) or by email at <EmailLink to="adibarra00@gmail.com" />.
