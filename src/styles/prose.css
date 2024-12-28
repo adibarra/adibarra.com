@@ -254,6 +254,7 @@
 .prose li {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  color: var(--fg-deep);
 }
 .prose > ul > li p {
   margin-top: 0.75em;
@@ -413,6 +414,7 @@
 .prose-sm li {
   margin-top: 0.2857143em;
   margin-bottom: 0.2857143em;
+  color: var(--fg-deep);
 }
 .prose-sm ol > li {
   padding-left: 1.5714286em;
