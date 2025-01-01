@@ -275,7 +275,7 @@ This phase of the project was easily the most time-consuming. I had to ensure th
 After implementing the logic, I could finally put the site together and see the final product. I was pleased with the way the site turned out. Due to adjusting the site layout based on screen size, the site also looked good on mobile devices. Here's a screenshot of the completed site.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/final-product.png" alt="The final product" rounded-lg />
+  <img src="/assets/posts/tamugd-writeup/final-product.png" alt="The final product" rounded-lg dark:border-1 border--c-tertiary />
   <figcaption class="caption">The final product</figcaption>
 </figure>
 
