@@ -19,7 +19,7 @@ Yup, that's right, I re-wrote the original TAMU Grade Distribution website that 
   <figcaption class="caption">Screenshot of the original version</figcaption>
 </figure>
 
-Since then, the site has been getting a lot of traffic. So, I've decided to re-design it from the ground up using the knowledge I've gained over the past year or two.
+Since then, the site has been getting a lot of traffic. So, I decided to re-design it from the ground up using the knowledge I gained over the last two years.
 
 ## Goals
 
@@ -239,4 +239,92 @@ For example, the page includes a section for the course description, prerequisit
 
 Some of the filters include the ability to filter by semester, year, professor, among other criteria.
 
+### Components
 
+Since part of the goal of the new version was to make the site more maintainable and easier to work with, I decided to break the UI down into a series of components. This allowed me to reuse components across the site and keep the codebase clean and organized.
+
+I ended up building a little over 25 components. These range from simple components like buttons and inputs to more complex components like tables and graphs. Each component is designed to be as reusable as possible and can be easily customized to fit different parts of the site.
+
+I'll briefly cover some of the more interesting or complex components.
+
+#### SearchBox
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The SearchBox component" rounded-lg />
+  <figcaption class="caption">The SearchBox component</figcaption>
+</figure>
+
+The search box is one of the most crucial interfaces available on the app. It allows the user to type in a query and get a response back from the backend's API. At idle, the searchbox displays suggestions for search queries the user could make. This helps to demonstrate the many types of queries it can parse and return results for. However, once the user focuses the search box, it clears out the placeholder and waits for input. As the user begins typing the search box will query the Autocomplete endpoint on the API and return the single most likely query the user is typing in. This autocomplete result is this displayed in a lighter font as the user types which they can choose to accept in order to save time while searching.
+
+The searchbox also has a secondary mode. It can be set to live-mode so that it does not wait for the user to hit the search button to query the API. This allows the site to instantly display query results as the user types their query. It also hides the search submission button since it is no longer necessary. This mode is currently used on the search page to help improve the user experience and make the site appear more responsive.
+
+#### ChipSelect
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The ChipSelect component" rounded-lg />
+  <figcaption class="caption">The ChipSelect component</figcaption>
+</figure>
+
+I built the ChipSelect component to be generic and reusable across the site. It allows users to select multiple options from a list of choices, displaying the selected options as chips that can be easily removed with a click. The component also includes a search box, making it simple for users to filter the list and find specific options even when the list is extensive.
+
+To power the search functionality, I integrated the <GithubLink repo="farzher/fuzzysort" /> library. This library enables fast and efficient fuzzy searching, allowing users to type any part of a choice and still get relevant results. This ensures a smoother and more intuitive experience, especially when dealing with long or complex lists of options.
+
+The component uses two-way binding to keep the selected options in sync with the parent component. This means any changes in the selection immediately update the parent, making it easy to manage state across the app. Additionally, the selected options can be color-coded for better clarity, which is particularly useful for visually matching the selections to related data in graphs or other visualizations.
+
+#### Chart
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The Chart component" rounded-lg />
+  <figcaption class="caption">The Chart component</figcaption>
+  </figure>
+
+I designed the Chart component to provide an interactive and visually appealing way to display the average GPA data over time. It was built by heavily leveraging the <GithubLink repo="amcharts/amcharts5" /> library. I took full advantage of its robust features while layering in customization so that it fit seamlessly with the app's design and functionality.
+
+At its core, Chart uses reactive props to render the data passed to it. It accepts a list of datasets, each representing a professor's GPA data over several semesters, and a corresponding list of categories for the x-axis. The component ensures the chart stays up-to-date by watching for changes to these props and re-rendering the chart accordingly.
+
+One of amChart's notable features is the availability of it's Default and Dark themes. By implementing some logic to dynamically switch between the themes as needed I was able to ensure the chart always matched the app's current theme. I was also able to leverage the responsiveness of the library to ensure the component looked great on any device. Regardless of the screen size, the layout dynamically adjusts to maintain clarity and usability.
+
+To enhance user experience further, I added some smooth animations for both the chart itself and the data series. The animations help to make the component visually engaging as the data is being loaded. Additionally, each series is color-coded to represent different professors, making comparisons effortless at a glance.
+
+#### CircleBar
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The CircleBar component" rounded-lg />
+  <figcaption class="caption">The CircleBar component</figcaption>
+</figure>
+
+This component was designed to represent percentages or parts of a whole. It consists of a circular bar that fills up based on the percentage value passed to it. The CircleBar component is highly customizable, allowing for easy adjustments to the text, size, color, and thickness of the bar. This flexibility ensures the component can be used in various contexts across the app.
+
+The CircleBar component uses reactive props to update the bar's fill based on the percentage value passed to it. This ensures the component remains dynamic and responsive to changes in the data. The component also includes a text label that displays the percentage value by default, making it easy for users to interpret the data at a glance.
+
+To enhance the visual appeal of the component, I added smooth animations to the bar's fill. The component's based on a circular SVG element which has it's stroke-dasharray and stroke-dashoffset properties animated to create the filling effect.
+
+#### Datatable
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The Datatable component" rounded-lg />
+  <figcaption class="caption">The Datatable component</figcaption>
+</figure>
+
+The datatable component is another generic component. It accepts any arbitrary array of data and a function which translates an item in the array into an object which is rendered into a row in the table. This system allows the component to be used in a wide variety of contexts across the site.
+
+The component also allows sorting the different columns by clicking on the column headers. This is done by calling the sort function with the column to sort by. The sort function then sorts the data based on the column and the current sort order of ascending or descending.
+
+### The Final Product
+
+After many iterations and refinements, I ended up with a design that I was happy with. The new version of the site is much more visually appealing, ergonomic, and easier to use than the original. It's also much more consistent and has a more modern look and feel compared to the original.
+
+<figure>
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Screenshot of the analyze page" rounded-lg dark:border-1 border--c-tertiary />
+  <figcaption class="caption">Screenshot of the analyze page</figcaption>
+</figure>
+
+The new version of the site is also much more responsive and works well on all devices. This was a big improvement over the original, which was not very mobile-friendly. The new version also loads much faster than the original, thanks to the modern tech stack and optimizations I made.
+
+## Conclusion
+
+During this project, I set out to improve my previously deployed site using the knowledge I've gained over the last two years. I wanted to make the new version much more visually appealing, ergonomic, and easier to use. I also wanted to improve performance by using modern web technologies and improve code quality by using a framework and build tools.
+
+I'm happy to say that I believe I've achieved all of these goals. The new version is an improvement on the old one in every way, shape, and form. However, similarly to the original, I plan to continue implementing new features and improvements.
+
+If you want to check out the site, you can find it [here](https://grades.adibarra.com). If you have any feedback or suggestions for the site, feel free to reach out to me on the project's feedback repo <GithubLink repo="adibarra/tamu-grades-feedback" /> or by email at <EmailLink to="adibarra00@gmail.com" />.
