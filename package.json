@@ -19,13 +19,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.293",
+    "@iconify/json": "^2.2.294",
     "@shikijs/markdown-it": "^1.26.1",
     "@shikijs/twoslash": "^1.26.1",
     "@unhead/vue": "^1.11.15",
-    "@unocss/reset": "^0.65.4",
+    "@unocss/reset": "^65.4.0",
     "@vitejs/plugin-vue": "^5.2.1",
-    "@vueuse/core": "^12.3.0",
+    "@vueuse/core": "^12.4.0",
     "dayjs": "^1.11.13",
     "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",
@@ -35,7 +35,7 @@
     "markdown-it-table-of-contents": "^0.8.0",
     "nprogress": "^0.2.0",
     "shiki": "^1.26.1",
-    "unocss": "^0.65.4",
+    "unocss": "^65.4.0",
     "unplugin-auto-import": "^19.0.0",
     "unplugin-vue-components": "^28.0.0",
     "unplugin-vue-macros": "^2.13.7",
@@ -48,15 +48,15 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.12.2",
+    "@antfu/eslint-config": "^3.13.0",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^14.1.2",
     "@types/markdown-it-link-attributes": "^3.0.5",
     "@types/nprogress": "^0.2.3",
-    "@unocss/eslint-plugin": "^0.65.4",
+    "@unocss/eslint-plugin": "^65.4.0",
     "eslint": "^9.17.0",
     "eslint-plugin-format": "^1.0.1",
-    "taze": "^0.18.0",
+    "taze": "^18.1.0",
     "typescript": "^5.7.3"
   }
 }
