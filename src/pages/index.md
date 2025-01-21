@@ -5,7 +5,7 @@ display: Alec Ibarra
 
 Hello there 👋, I'm <span font-600 text--c-accent>Alec</span>.<br>
 
-I'm currently a <span font-600 text--c-accent>Software Engineering</span> student.<br>
+I'm currently a <span font-600 text--c-accent>Computer Science</span> student.<br>
 I've also previously studied <span font-600 text--c-accent>Electrical Engineering</span> for a few years.<br>
 Ever since I was little, I've been fascinated with computers, hardware, and programming.<br>
 
