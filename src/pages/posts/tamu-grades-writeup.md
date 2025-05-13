@@ -1,7 +1,7 @@
 ---
 title: Blog | Building TAMU Grades
 display: Building TAMU Grades
-date: 2025-01-01T06:00:00Z
+date: 2025-06-01T06:00:00Z
 lang: en
 duration: 20min
 subtitle: A writeup on how I built the TAMU Grades website.
