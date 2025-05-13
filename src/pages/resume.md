@@ -14,12 +14,6 @@ display: Resume
     rounded-lg b-1 dark:b-none
   >
   <figcaption class="caption">
-    <a
-      href="/assets/resume/Resume - Alec Ibarra.pdf"
-      target="_blank"
-      rel="noopener"
-    >
-      Download as PDF <div i-carbon-document-download inline-block align-text-bottom />
-    </a>
+    <DownloadLink url="/assets/resume/Resume - Alec Ibarra.pdf" />
   </figcaption>
 </figure>
