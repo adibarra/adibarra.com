@@ -5,9 +5,12 @@ display: Alec Ibarra
 
 Hello there 👋, I'm <span font-600 text--c-accent>Alec</span>.<br>
 
-I'm currently a <span font-600 text--c-accent>Computer Science</span> student.<br>
+I'm a recent <span font-600 text--c-accent>Computer Science</span> graduate.<br>
 I've also previously studied <span font-600 text--c-accent>Electrical Engineering</span> for a few years.<br>
 Ever since I was little, I've been fascinated with computers, hardware, and programming.<br>
 
-Currently, I'm learning a lot about <span font-600 text--c-accent>Web Development</span>, but I also love learning about <span font-600 text--c-accent>Machine Learning</span>.
-My hope is to one day work in the field of <span font-600 text--c-accent>Robotics</span> since it merges both of my passions -- hardware and software.
+I'm a <span font-600 text--c-accent>Full‑Stack Developer</span> who enjoys building scalable, production‑ready applications.
+
+I've developed projects like <span font-600 text--c-accent>TAMU Grades</span>, a web app serving thousands of users by turning raw unstructured university data into an accessible platform, led a team building <span font-600 text--c-accent>Fintasy</span>, a real-time paper trading platform with social features, and developed multiple <span font-600 text--c-accent>Machine Learning</span> models, including some for handwritten character recognition that achieved over 99% accuracy.
+
+My long-term goal is to work in the field of <span font-600 text--c-accent>Robotics</span>, where I can combine my passion for both hardware and software to build intelligent, real-world systems.
