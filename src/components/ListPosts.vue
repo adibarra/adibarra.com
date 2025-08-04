@@ -8,7 +8,7 @@ const posts: Post[] = router.getRoutes()
   .sort((a, b) => +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date))
   .map(i => ({
     path: i.path,
-    display: i.meta.frontmatter.display || i.meta.frontmatter.title,
+    title: i.meta.frontmatter.display || i.meta.frontmatter.title,
     date: i.meta.frontmatter.date,
     duration: i.meta.frontmatter.duration,
     upcoming: i.meta.frontmatter.upcoming,
@@ -43,7 +43,7 @@ const posts: Post[] = router.getRoutes()
             >
               upcoming
             </span>
-            <span align-middle>{{ route.display }}</span>
+            <span align-middle>{{ route.title }}</span>
           </div>
 
           <div text-sm op-50>
