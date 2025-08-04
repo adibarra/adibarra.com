@@ -1,5 +1,5 @@
 import type { UserModule } from '~/types'
-import { createHead } from '@unhead/vue'
+import { createHead, VueHeadMixin } from '@unhead/vue/client'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
@@ -29,4 +29,5 @@ Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eage
 // mount the app
 app.use(router)
 app.use(head)
+app.mixin(VueHeadMixin)
 app.mount('#app')

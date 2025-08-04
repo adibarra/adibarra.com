@@ -29,4 +29,68 @@ declare module 'vue-router/auto-routes' {
     '/projects': RouteRecordInfo<'/projects', '/projects', Record<never, never>, Record<never, never>>,
     '/resume': RouteRecordInfo<'/resume', '/resume', Record<never, never>, Record<never, never>>,
   }
+
+  /**
+   * Route file to route info map by unplugin-vue-router.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * Each key is a file path relative to the project root with 2 properties:
+   * - routes: union of route names of the possible routes when in this page (passed to useRoute<...>())
+   * - views: names of nested views (can be passed to <RouterView name="...">)
+   *
+   * @internal
+   */
+  export interface _RouteFileInfoMap {
+    'src/pages/index.md': {
+      routes: '/'
+      views: never
+    }
+    'src/pages/[...404].md': {
+      routes: '/[...404]'
+      views: never
+    }
+    'src/pages/posts/index.md': {
+      routes: '/posts/'
+      views: never
+    }
+    'src/pages/posts/current-projects.md': {
+      routes: '/posts/current-projects'
+      views: never
+    }
+    'src/pages/posts/tamu-grades-writeup.md': {
+      routes: '/posts/tamu-grades-writeup'
+      views: never
+    }
+    'src/pages/posts/tamugd-writeup.md': {
+      routes: '/posts/tamugd-writeup'
+      views: never
+    }
+    'src/pages/posts/using-cloudflare.md': {
+      routes: '/posts/using-cloudflare'
+      views: never
+    }
+    'src/pages/posts/web-optimization.md': {
+      routes: '/posts/web-optimization'
+      views: never
+    }
+    'src/pages/projects.md': {
+      routes: '/projects'
+      views: never
+    }
+    'src/pages/resume.md': {
+      routes: '/resume'
+      views: never
+    }
+  }
+
+  /**
+   * Get a union of possible route names in a certain route component file.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * @internal
+   */
+  export type _RouteNamesForFilePath<FilePath extends string> =
+    _RouteFileInfoMap extends Record<FilePath, infer Info>
+      ? Info['routes']
+      : keyof RouteNamedMap
 }
