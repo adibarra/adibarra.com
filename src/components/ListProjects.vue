@@ -23,7 +23,7 @@ defineProps<{
         <div pr-5>
           <div
             :class="item.icon || 'i-carbon:unknown'"
-            text-3xl opacity-60
+            text-3xl text--c-text opacity-60
           />
         </div>
 
@@ -54,7 +54,7 @@ defineProps<{
           </div>
 
           <div
-            text-sm font-normal opacity-60
+            text-sm text--c-text font-normal opacity-60
             v-html="item.desc"
           />
         </div>
