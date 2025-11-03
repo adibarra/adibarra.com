@@ -1,3 +1,4 @@
+import type { RouteRecordRaw } from 'vue-router'
 import type { UserModule } from '~/types'
 import { createHead, VueHeadMixin } from '@unhead/vue/client'
 import { setupLayouts } from 'virtual:generated-layouts'
@@ -16,7 +17,7 @@ const head = createHead()
 // create the router instance
 const router = createRouter({
   history: createWebHistory(),
-  routes: setupLayouts(routes),
+  routes: setupLayouts(routes as RouteRecordRaw[]),
 })
 
 // Create the Vue app instance
