@@ -12,5 +12,3 @@ Ever since I was little, I've been fascinated with computers, hardware, and prog
 I'm a <span font-600 text--c-accent>Full‑Stack Developer</span> who enjoys building scalable, production‑ready applications.
 
 I've developed projects like <span font-600 text--c-accent>TAMU Grades</span>, a web app serving thousands of users by turning raw unstructured university data into an accessible platform, led a team building <span font-600 text--c-accent>Fintasy</span>, a real-time paper trading platform with social features, and developed multiple <span font-600 text--c-accent>Machine Learning</span> models, including some for handwritten character recognition that achieved over 99% accuracy.
-
-My long-term goal is to work in the field of <span font-600 text--c-accent>Robotics</span>, where I can combine my passion for both hardware and software to build intelligent, real-world systems.
