@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "packageManager": "pnpm@10.20.0",
-  "description": "My personal website",
+  "description": "My portfolio website",
   "contributors": [
     "adibarra <github@adibarra.com> (https://adibarra.com)"
   ],
