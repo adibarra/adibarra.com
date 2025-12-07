@@ -214,7 +214,7 @@
     "category": "games"
   },
   {
-    "name": "adibarra.com",
+    "name": "Portfolio Website",
     "link": "https://adibarra.com",
     "repo": "https://github.com/adibarra/adibarra.com",
     "desc": "My personal portfolio website showcasing projects and experience. Built with Vue.js, TypeScript, UnoCSS, Vite, and other modern web technologies.",
@@ -334,7 +334,7 @@
     "repo": "https://github.com/adibarra",
     "desc": "A link to my GitHub profile for more projects.",
     "icon": "i-lucide:github",
-    "date": "unknown",
+    "date": null,
     "category": "more"
   }
 ]

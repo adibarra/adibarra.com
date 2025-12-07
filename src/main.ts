@@ -7,10 +7,10 @@ import { routes } from 'vue-router/auto-routes'
 import App from '~/App.vue'
 
 import '@unocss/reset/tailwind.css'
+import 'uno.css'
 import '@shikijs/twoslash/style-rich.css'
 import './styles/prose.css'
 import './styles/markdown.css'
-import 'uno.css'
 
 const head = createHead()
 

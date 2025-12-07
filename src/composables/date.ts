@@ -14,3 +14,11 @@ export function getYear(a: Date | string | number) {
 export function isSameYear(a: Date | string | number, b: Date | string | number) {
   return a && b && getYear(a) === getYear(b)
 }
+
+export function parseYear(d: any) {
+  if (!d) return Number.NEGATIVE_INFINITY
+  const s = String(d).trim()
+  const match = s.match(/(\d{4})/)
+  if (!match) return Number.NEGATIVE_INFINITY
+  return Number(match[1])
+}

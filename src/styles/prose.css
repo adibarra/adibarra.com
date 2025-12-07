@@ -9,7 +9,7 @@
 
 .prose {
   color: var(--fg);
-  max-width: 65ch;
+  max-width: min(80ch, calc(100% - 2rem));
   font-size: 1rem;
   line-height: 1.75;
 }
