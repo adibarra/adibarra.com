@@ -1,0 +1,340 @@
+[
+  {
+    "name": "Shadle",
+    "repo": "https://github.com/adibarra/shadle",
+    "link": "https://shadle.app",
+    "desc": "Shadle is a web app that implements a Wordle-style game for guessing colors. It provides server side answer validation and statistics tracking.",
+    "icon": "i-lucide:palette",
+    "date": "2025",
+    "category": "webapps"
+  },
+  {
+    "name": "Rust Mini Projects",
+    "repo": "https://github.com/adibarra/rust-mini-projects",
+    "desc": "Multiple small, independent Rust projects designed for learning and practicing Rust programming concepts. Includes interactive games such as Blackjack and Guess the Number.",
+    "icon": "i-lucide:code",
+    "date": "2025",
+    "category": "tools"
+  },
+  {
+    "name": "Clip Forge",
+    "desc": "Autonomously discovers clips from Twitch by analyzing sentiment, audio, and chat speed, and then turning them into a compilation.",
+    "icon": "i-carbon:video",
+    "date": "2025",
+    "category": "webapps"
+  },
+  {
+    "name": "Game Starter",
+    "desc": "A Raylib starter template with scene management and other utilities for new games, based on the engine I built for Mycelium Maze.",
+    "icon": "i-carbon:game-console",
+    "date": "2025",
+    "category": "games"
+  },
+  {
+    "name": "Unigram and Bigram Language Models",
+    "repo": "https://github.com/adibarra/hlt/tree/main/a1",
+    "desc": "Unigram and bigram language models with Laplace and Add-k smoothing, unknown word handling, and perplexity evaluation.",
+    "icon": "i-carbon:book",
+    "date": "2025",
+    "category": "machine-learning"
+  },
+  {
+    "name": "Neural Networks for Sentiment Analysis",
+    "repo": "https://github.com/adibarra/hlt/tree/main/a2",
+    "desc": "Feedforward and recurrent neural networks for 5-class sentiment analysis on Yelp reviews using PyTorch with bag-of-words and word embeddings.",
+    "icon": "i-carbon:network-1",
+    "date": "2025",
+    "category": "machine-learning"
+  },
+  {
+    "name": "Model Comparison for Sentiment Analysis",
+    "repo": "https://github.com/adibarra/hlt/tree/main/project",
+    "desc": "Comparison of Logistic Regression, LSTM, Text CNN, and TinyBERT for sentiment analysis, exploring trade-offs between complexity, training time, and accuracy.",
+    "icon": "i-carbon:chart-bar",
+    "date": "2025",
+    "category": "machine-learning"
+  },
+  {
+    "name": "Harmonic Links",
+    "repo": "https://github.com/adibarra/harmonic-link",
+    "link": "https://harmonic-link.vercel.app",
+    "desc": "A web app to discover connections between artists and albums through their musical collaborations. Built with Next.js, Express, and Supabase.",
+    "icon": "i-lucide:chart-line",
+    "date": "2025",
+    "category": "webapps"
+  },
+  {
+    "name": "Mycelium Maze",
+    "repo": "https://github.com/adibarra/mycelium-maze",
+    "desc": "A raycasted dungeon crawler built in C++ with raylib for CS 4332. Features turn-based RPG combat, inventory systems, and multiple floors with boss fights.",
+    "icon": "i-carbon:tree",
+    "date": "2025",
+    "category": "games"
+  },
+  {
+    "name": "Nginx Static",
+    "repo": "https://github.com/adibarra/nginx-static",
+    "link": "https://hub.docker.com/r/adibarra/nginx-static",
+    "desc": "A lightweight NGINX Docker image for hosting static content in multistage builds, with ETag caching, no server tokens, and Brotli/GZip compression.",
+    "icon": "i-lucide:container",
+    "date": "2024",
+    "category": "other"
+  },
+  {
+    "name": "Vue TS Node Monorepo Template",
+    "repo": "https://github.com/adibarra/vue-ts-node-monorepo-template",
+    "desc": "A full-stack monorepo template with Vue.js, TypeScript, and Node.js, featuring pnpm, devcontainers, ESLint, UnoCSS, and Vite.",
+    "icon": "i-lucide:folder",
+    "date": "2024",
+    "category": "other"
+  },
+  {
+    "name": "Devcontainer Features",
+    "repo": "https://github.com/adibarra/devcontainer-features",
+    "desc": "Custom devcontainer features for VSCode, including 'alpine-nvm' for Node.js version management on Alpine Linux.",
+    "icon": "i-carbon:container-software",
+    "date": "2024",
+    "category": "tools"
+  },
+  {
+    "name": "HCR using CNNs",
+    "repo": "https://github.com/adibarra/hcr-cnn",
+    "desc": "Convolutional neural networks for handwritten character recognition on MNIST and EMNIST datasets, achieving 99.6% accuracy with TensorFlow and Keras Tuner.",
+    "icon": "i-iconoir:brain-research",
+    "date": "2024",
+    "category": "machine-learning"
+  },
+  {
+    "name": "Query Quest",
+    "link": "https://quest.adibarra.com",
+    "repo": "https://github.com/adibarra/query-quest",
+    "desc": "A trivia game for competing on leaderboards with random categories and questions. Includes stat tracking. Built with Vue.js, FastAPI, and PostgreSQL.",
+    "icon": "i-akar-icons:question",
+    "date": "2024",
+    "category": "webapps"
+  },
+  {
+    "name": "Fintasy",
+    "link": "https://fintasy.adibarra.com",
+    "repo": "https://github.com/adibarra/fintasy",
+    "desc": "Paper trading platform simulating stock trading with tournaments and leaderboards. Built with Vue.js, Python FastAPI, PostgreSQL, and TypeScript.",
+    "icon": "i-carbon:chart-candlestick",
+    "date": "2024",
+    "category": "webapps"
+  },
+  {
+    "name": "EPUB Insert Generator",
+    "repo": "https://github.com/adibarra/epub-insert-generator",
+    "desc": "A Python tool for generating EPUB3 xhtml image insert pages from JSON definitions with styled layouts and OPF manifest entries.",
+    "icon": "i-carbon:book",
+    "date": "2024",
+    "category": "tools"
+  },
+  {
+    "name": "Data Doctor",
+    "repo": "https://github.com/adibarra/data-doctor",
+    "desc": "A full-stack web app for quality control on ML training datasets with interactive editing, queue-based review, and ML-powered duplicate detection.",
+    "icon": "i-carbon:edit",
+    "date": "2024",
+    "category": "webapps"
+  },
+  {
+    "name": "Simple Dark",
+    "repo": "https://github.com/adibarra/simple-dark",
+    "link": "https://github.com/adibarra/simple-dark/releases",
+    "desc": "A dark theme extension for Google Chrome that provides a clean, dark interface for the browser. Reminiscent of firefox's default dark theme.",
+    "icon": "i-lucide:contrast",
+    "date": "2023",
+    "category": "other"
+  },
+  {
+    "name": "Blackjack C++",
+    "repo": "https://github.com/adibarra/blackjack-cpp",
+    "desc": "A console-based Blackjack card game in C++ with ASCII card rendering, hit/stand/split mechanics, and automatic deck reshuffling.",
+    "icon": "i-mdi:cards-outline",
+    "date": "2023",
+    "category": "games"
+  },
+  {
+    "name": "URL Shortener",
+    "repo": "https://github.com/adibarra/url-shortener",
+    "desc": "A lightweight Node.js library for generating and managing URL short codes with customizable options, TypeScript support, and zero dependencies.",
+    "icon": "i-carbon:link",
+    "date": "2023",
+    "category": "tools"
+  },
+  {
+    "name": "TAMU Grades",
+    "link": "https://grades.adibarra.com",
+    "repo": "https://github.com/adibarra/tamu-grades-feedback",
+    "desc": "A web application for Texas A&M students to search and analyze courses, professors, and historical grade distribution reports with an intuitive interface.",
+    "icon": "i-carbon:subflow",
+    "date": "2023",
+    "category": "webapps"
+  },
+  {
+    "name": "Server Commander",
+    "repo": "https://github.com/adibarra/Server-Commander",
+    "desc": "A TypeScript Discord bot for controlling game servers with modular slash commands, event listeners, and REST API integration.",
+    "icon": "i-lucide:server",
+    "date": "2023",
+    "category": "tools"
+  },
+  {
+    "name": "LeetCode TS",
+    "repo": "https://github.com/adibarra/leetcode-ts",
+    "desc": "A TypeScript LeetCode solutions collection with custom testing framework, benchmarking, and CLI tool for auto-generating solution files.",
+    "icon": "i-carbon:code",
+    "date": "2023",
+    "category": "tools"
+  },
+  {
+    "name": "XO Market Bot",
+    "repo": "https://github.com/adibarra/XO-MarketBot",
+    "desc": "A Python automation tool for the game Crossout that automatically buys, crafts, and sells items at optimal prices using OCR and template matching.",
+    "icon": "i-fluent:bot-24-regular",
+    "date": "2022",
+    "category": "tools"
+  },
+  {
+    "name": "Enchant Tweaker",
+    "link": "https://modrinth.com/mod/enchant-tweaker",
+    "repo": "https://github.com/adibarra/enchant-tweaker",
+    "desc": "A Fabric mod for Minecraft that allows extensive customization of enchantment mechanics with 68 configuration options while maintaining the vanilla feel.",
+    "icon": "i-fluent:wrench-24-regular",
+    "date": "2022",
+    "category": "other"
+  },
+  {
+    "name": "Game Engine V2",
+    "repo": "https://github.com/adibarra/GameEngineV2",
+    "desc": "A Java game engine with screen management, UI components, keybind handling, logging, and audio. Reusable engine framework for my Java game projects.",
+    "icon": "i-carbon:game-console",
+    "date": "2022",
+    "category": "games"
+  },
+  {
+    "name": "adibarra.com",
+    "link": "https://adibarra.com",
+    "repo": "https://github.com/adibarra/adibarra.com",
+    "desc": "My personal portfolio website showcasing projects and experience. Built with Vue.js, TypeScript, UnoCSS, Vite, and other modern web technologies.",
+    "icon": "i-carbon:portfolio",
+    "date": "2022",
+    "category": "websites"
+  },
+  {
+    "name": "TAMU Grade Distribution Website",
+    "repo": "https://github.com/adibarra/tamugd-website",
+    "desc": "A sleek interface for browsing and analyzing Texas A&M University's grade distribution data with fast loading and responsive design.",
+    "icon": "i-carbon:analytics",
+    "tags": ["deprecated"],
+    "date": "2021",
+    "category": "webapps"
+  },
+  {
+    "name": "TAMU Grade Distribution Parser",
+    "repo": "https://github.com/adibarra/tamugd-parser",
+    "desc": "An automated parser for Texas A&M University's grade distribution PDFs, downloads reports from 2014 onwards and stores results in MySQL.",
+    "icon": "i-lucide:table",
+    "tags": ["deprecated"],
+    "date": "2021",
+    "category": "tools"
+  },
+  {
+    "name": "Image Stylizer",
+    "repo": "https://github.com/adibarra/image-stylizer",
+    "desc": "A plugin-based image processing tool with extensible plugins, CLI configuration, and optimized performance using NumPy and Numba JIT compilation.",
+    "icon": "i-lucide:image",
+    "date": "2021",
+    "category": "tools"
+  },
+  {
+    "name": "Generic Discord Bot",
+    "repo": "https://github.com/adibarra/Generic-DiscordBot",
+    "desc": "A quick-start template for Discord bots with multi-server support, customizable commands, and permission levels to accelerate development.",
+    "icon": "i-lucide:bot",
+    "date": "2020",
+    "category": "tools"
+  },
+  {
+    "name": "UNO",
+    "repo": "https://github.com/adibarra/UNO",
+    "desc": "A fully functional UNO card game implemented in Java in 24 hours. Features complete game mechanics, AI opponents, saving, and a graphical interface.",
+    "icon": "i-mdi:cards-outline",
+    "date": "2018",
+    "category": "games"
+  },
+  {
+    "name": "PoC RPG",
+    "repo": "https://github.com/adibarra/RPG",
+    "desc": "A playable RPG proof of concept built with my custom game engine. Features tile-based levels, animations, audio, scripting, chat commands, and NPC quests.",
+    "icon": "i-akar-icons:double-sword",
+    "date": "2018",
+    "category": "games"
+  },
+  {
+    "name": "UNO Online",
+    "repo": "https://github.com/adibarra/UNOnline",
+    "desc": "An extension of my UNO clone game adding online multiplayer functionality, featuring matchmaking, lobbies, and real-time gameplay.",
+    "icon": "i-mdi:cards-outline",
+    "date": "2018",
+    "category": "games"
+  },
+  {
+    "name": "Tank Battle",
+    "repo": "https://github.com/adibarra/TankBattle",
+    "desc": "A simple tank battle game where players control a tank and fight against three AI-controlled tanks in an arena with powerups.",
+    "icon": "i-carbon:tank",
+    "date": "2017",
+    "category": "games"
+  },
+  {
+    "name": "Perlin Noise Island",
+    "repo": "https://github.com/adibarra/PerlinNoiseIsland",
+    "desc": "An experiment in procedural generation. Uses Perlin noise algorithms to generate a random tile based map to explore.",
+    "icon": "i-carbon:earth",
+    "date": "2017",
+    "category": "games"
+  },
+  {
+    "name": "Prop Hunt",
+    "repo": "https://github.com/adibarra/PropHunt",
+    "desc": "An unfinished prop hunt style game where hiders disguise themselves as props while hunters search for them. Includes spawners, props, and fog of war mechanics.",
+    "icon": "i-tabler:mug",
+    "tags": ["unfinished"],
+    "date": "2017",
+    "category": "games"
+  },
+  {
+    "name": "Ultimate Tic-Tac-Toe",
+    "repo": "https://github.com/adibarra/UltimateTicTacToe",
+    "desc": "A much more complex variant of Tic-Tac-Toe with a 3x3 grid of smaller boards, where each move determines the next playable board.",
+    "icon": "i-lucide:grid",
+    "date": "2017",
+    "category": "games"
+  },
+  {
+    "name": "Tower Defense Remastered",
+    "repo": "https://github.com/adibarra/TowerDefenseRemastered",
+    "desc": "A remastered tower defense game where players strategically defend against increasing enemy waves, inspired by Bloons Tower Defense.",
+    "icon": "i-carbon:bastion-host",
+    "date": "2017",
+    "category": "games"
+  },
+  {
+    "name": "Rainbow Snake Game",
+    "repo": "https://github.com/adibarra/RainbowSnakeGame",
+    "desc": "A Snake game where each square randomly changes colors every tick, creating a chaotic and disorienting visual experience.",
+    "icon": "i-bi:dpad",
+    "date": "2016",
+    "category": "games"
+  },
+  {
+    "name": "GitHub Profile",
+    "repo": "https://github.com/adibarra",
+    "desc": "A link to my GitHub profile for more projects.",
+    "icon": "i-lucide:github",
+    "date": "unknown",
+    "category": "more"
+  }
+]

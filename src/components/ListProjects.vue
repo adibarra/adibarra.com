@@ -1,13 +1,21 @@
 <script setup lang="ts">
-defineProps<{
-  projects: Record<string, any[]>
-}>()
+import projectsData from '~/data/projects.json'
+
+const projects = projectsData.reduce((acc, project) => {
+  const cat = project.category
+  if (!acc[cat]) acc[cat] = []
+  acc[cat].push(project)
+  return acc
+}, {} as Record<string, any[]>)
+
+const categoryOrder = ['webapps', 'websites', 'machine-learning', 'tools', 'games', 'other', 'more']
+const sortedCategories = categoryOrder.filter(cat => projects[cat])
 </script>
 
 <template>
-  <template v-for="category in Object.keys(projects)" :key="category">
+  <template v-for="category in sortedCategories" :key="category">
     <h2 mt-10 font-bold>
-      {{ category }}
+      {{ category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') }}
     </h2>
     <div
       class="grid-cols-[repeat(auto-fit,minmax(250px,1fr))]"

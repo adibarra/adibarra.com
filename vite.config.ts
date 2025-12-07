@@ -81,7 +81,9 @@ export default defineConfig({
     }),
 
     // https://github.com/antfu/unocss
-    UnoCSS(),
+    UnoCSS({
+      configDeps: ['src/data/projects.json'],
+    }),
 
     // https://github.com/mdit-vue/unplugin-vue-markdown
     Markdown({

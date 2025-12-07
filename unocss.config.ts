@@ -1,3 +1,5 @@
+import fs from 'node:fs'
+import path from 'node:path'
 import {
   defineConfig,
   presetAttributify,
@@ -8,6 +10,12 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
+
+const projectsPath = path.resolve(__dirname, 'src/data/projects.json')
+const projectsData = fs.readFileSync(projectsPath, 'utf-8')
+const projects = JSON.parse(projectsData)
+const icons = projects.map((p: any) => p.icon).filter(Boolean) as string[]
+const uniqueIcons = [...new Set(icons)]
 
 export default defineConfig({
   shortcuts: [
@@ -38,5 +46,5 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
-  safelist: 'prose mx-auto text-left'.split(' '),
+  safelist: ['prose', 'mx-auto', 'text-left', 'i-carbon:unknown', ...uniqueIcons],
 })
