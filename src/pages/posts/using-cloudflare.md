@@ -43,4 +43,4 @@ That's it! You're done! Cloudflare should now be working with your website. Feel
 
 In just a few short steps you've set up Cloudflare with your website and boosted your site's speed and reliability for free!
 
-As always, if you have any feedback or suggestions, feel free to reach out to me by email at <EmailLink to="adibarra00@gmail.com" />.
+As always, if you have any feedback or suggestions, feel free to reach out to me by email at <EmailLink />.

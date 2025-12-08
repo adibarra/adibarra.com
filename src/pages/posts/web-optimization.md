@@ -142,4 +142,4 @@ Optimizing a website is extremely important. It can drastically improve the load
 
 Many different techniques can be used to optimize a website. In fact, we've barely scratched the surface. However, the most important thing is to make sure you are using the right tool for the job and that you are not over-engineering your solution. Sometimes, the simplest solution is best.
 
-As always, if you have any feedback or suggestions, feel free to reach out to me by email at <EmailLink to="adibarra00@gmail.com" />.
+As always, if you have any feedback or suggestions, feel free to reach out to me by email at <EmailLink />.

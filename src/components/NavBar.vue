@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { siteConfig } from '~/config'
+</script>
+
 <template>
   <header z-40 text--c-text>
     <router-link
@@ -25,10 +29,10 @@
         <span lt-md:hidden>Resume</span>
         <div i-uil-file-alt md:hidden />
       </router-link>
-      <a href="https://github.com/adibarra" title="GitHub" target="_blank" rel="noopener">
+      <a :href="siteConfig.githubUrl" title="GitHub" target="_blank" rel="noopener">
         <div i-uil-github-alt />
       </a>
-      <a href="mailto:adibarra00@gmail.com" title="Email" target="_blank" rel="noopener">
+      <a :href="`mailto:${siteConfig.email}`" title="Email" target="_blank" rel="noopener">
         <div i-feather-mail />
       </a>
       <a

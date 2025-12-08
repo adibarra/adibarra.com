@@ -62,4 +62,4 @@ Vertiled is a web-based map editor designed for making tile-based maps. It is wr
 
 So, that's what I've been working on lately. I'm hoping to have some screenshots of my projects soon.
 
-As always, if you have any feedback or suggestions, feel free to reach out to me by email at <EmailLink to="adibarra00@gmail.com" />.
+As always, if you have any feedback or suggestions, feel free to reach out to me by email at <EmailLink />.

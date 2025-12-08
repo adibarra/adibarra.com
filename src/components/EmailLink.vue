@@ -1,17 +1,21 @@
 <script setup lang="ts">
-defineProps<{
-  to: string
-}>()
+import { siteConfig } from '~/config'
+
+const props = withDefaults(defineProps<{
+  to?: string
+}>(), {
+  to: siteConfig.email,
+})
 </script>
 
 <template>
   <span text-nowrap text--c-text>
     <div i-carbon:email relative top-1 flex-inline />
     <a
-      :href="`mailto:${to}`"
+      :href="`mailto:${props.to}`"
       ml-1
     >
-      {{ to }}
+      {{ props.to }}
     </a>
   </span>
 </template>

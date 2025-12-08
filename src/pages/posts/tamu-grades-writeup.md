@@ -327,4 +327,4 @@ During this project, I set out to improve my previously deployed site using the 
 
 I'm happy to say that I believe I've achieved all of these goals. The new version is an improvement on the old one in every way, shape, and form. However, similarly to the original, I plan to continue implementing new features and improvements.
 
-If you want to check out the site, you can find it [here](https://grades.adibarra.com). If you have any feedback or suggestions for the site, feel free to reach out to me on the project's feedback repo <GithubLink repo="adibarra/tamu-grades-feedback" /> or by email at <EmailLink to="adibarra00@gmail.com" />.
+If you want to check out the site, you can find it [here](https://grades.adibarra.com). If you have any feedback or suggestions for the site, feel free to reach out to me on the project's feedback repo <GithubLink repo="adibarra/tamu-grades-feedback" /> or by email at <EmailLink />.

@@ -285,4 +285,4 @@ This project was a lot of fun to work on. I learned a lot about web development 
 
 However, as with all projects, it is not entirely finished. There is certainly plenty of new features and improvements that I want to add to the site. I will be working on these in the future and will be sure to write a new post when I do.
 
-If you want to check out the site, you can find it ~~[here](https://gd.adibarra.com)~~ (replaced by new version). If you have any feedback or suggestions for the site, feel free to reach out to me on the project's repo (<GithubLink repo="adibarra/tamugd-website" />) or by email at <EmailLink to="adibarra00@gmail.com" />.
+If you want to check out the site, you can find it ~~[here](https://gd.adibarra.com)~~ (replaced by new version). If you have any feedback or suggestions for the site, feel free to reach out to me on the project's repo (<GithubLink repo="adibarra/tamugd-website" />) or by email at <EmailLink />.
