@@ -10,11 +10,12 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
+import type { Project } from './src/types'
 
 const projectsPath = path.resolve(__dirname, 'src/data/projects.json')
 const projectsData = fs.readFileSync(projectsPath, 'utf-8')
-const projects = JSON.parse(projectsData)
-const icons = projects.map((p: any) => p.icon).filter(Boolean) as string[]
+const projects: Project[] = JSON.parse(projectsData)
+const icons = projects.map(p => p.icon).filter(Boolean) as string[]
 const uniqueIcons = [...new Set(icons)]
 
 export default defineConfig({
