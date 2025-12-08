@@ -4,6 +4,7 @@
     "akar",
     "antfu",
     "attributify",
+    "bigram",
     "chartjs",
     "cheeriojs",
     "composables",
@@ -47,7 +48,8 @@
     "raycasted",
     "raylib",
     "rgba",
-    "Shiki",
+    "shadle",
+    "shiki",
     "shikiji",
     "shikijs",
     "subflow",
@@ -59,6 +61,7 @@
     "tweaker",
     "twoslash",
     "unhead",
+    "unigram",
     "unocss",
     "unplugin",
     "vertiled",
@@ -68,6 +71,7 @@
     "vueuse",
     "webapps",
     "webfont",
-    "wireframes"
+    "wireframes",
+    "wordle"
   ]
 }
