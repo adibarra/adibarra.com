@@ -1,6 +1,7 @@
 ---
 title: Resume | Alec Ibarra
 display: Resume
+subtitle: My professional experience, skills, and qualifications.
 ---
 
 <figure>
