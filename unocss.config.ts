@@ -1,3 +1,4 @@
+import type { Project } from './src/types'
 import fs from 'node:fs'
 import path from 'node:path'
 import {
@@ -5,12 +6,11 @@ import {
   presetAttributify,
   presetIcons,
   presetTypography,
-  presetUno,
   presetWebFonts,
+  presetWind3,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import type { Project } from './src/types'
 
 const projectsPath = path.resolve(__dirname, 'src/data/projects.json')
 const projectsData = fs.readFileSync(projectsPath, 'utf-8')
@@ -29,7 +29,7 @@ export default defineConfig({
     ['text-xxs', 'text-[0.70rem] line-height-[0.75rem]'],
   ],
   presets: [
-    presetUno(),
+    presetWind3(),
     presetAttributify(),
     presetIcons({
       scale: 1.2,

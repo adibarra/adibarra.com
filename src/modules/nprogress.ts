@@ -1,5 +1,5 @@
-import type { UserModule } from '~/types'
 import type { RouteLocationNormalized } from 'vue-router'
+import type { UserModule } from '~/types'
 import NProgress from 'nprogress'
 
 export const install: UserModule = ({ router }) => {
