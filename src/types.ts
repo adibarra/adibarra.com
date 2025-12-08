@@ -13,3 +13,12 @@ export interface Post {
   duration?: string
   upcoming?: boolean
 }
+
+export interface Project {
+  name: string
+  desc: string
+  icon?: string
+  tags: string[]
+  repo?: string
+  link?: string
+}

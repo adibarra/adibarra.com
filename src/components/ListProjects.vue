@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import projects from '~/data/projects.json'
+import type { Project } from '~/types'
+import projectsData from '~/data/projects.json'
+
+const projects: Project[] = projectsData
 </script>
 
 <template>

@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { item } = defineProps<{ item: Record<string, any> }>()
+import type { Project } from '~/types'
+
+defineProps<{ item: Project }>()
 </script>
 
 <template>
