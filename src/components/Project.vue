@@ -8,7 +8,7 @@ const { item } = defineProps<{ item: Record<string, any> }>()
     hover="bg-[#ffffff08]"
     flex items-start rounded-lg px-4 py-3 text-lg
   >
-    <div my-auto flex-none pr-5>
+    <div my-auto flex-none pb-5 pr-5>
       <div :class="item.icon || 'i-carbon:unknown'" text-3xl text--c-text opacity-60 />
     </div>
 
@@ -43,12 +43,8 @@ const { item } = defineProps<{ item: Record<string, any> }>()
       <div>
         <div text-sm text--c-text font-normal opacity-60 v-html="item.desc" />
 
-        <div mt-2 flex items-center gap-2>
-          <span v-if="item.date && item.date !== 'unknown'" rounded-full bg--c-secondary px-2 py-1 text-xxs text--c-text opacity-80>{{ item.date }}</span>
-          <span rounded-full bg--c-secondary px-2 py-1 text-xxs text--c-text opacity-80>{{ item.category }}</span>
-          <span v-if="item.tags && item.tags.length" flex items-center gap-2>
-            <span v-for="(t, i) in item.tags" :key="i" rounded-full bg--c-secondary px-2 py-1 text-xxs text--c-text opacity-80>{{ t }}</span>
-          </span>
+        <div v-if="item.tags && item.tags.length" mt-2 flex flex-wrap items-center gap-2>
+          <span v-for="(t, i) in item.tags" :key="i" rounded-full bg--c-secondary px-2 py-1 text-xxs text--c-text opacity-80>{{ t }}</span>
         </div>
       </div>
     </div>
