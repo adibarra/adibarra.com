@@ -62,8 +62,8 @@ html:not(.dark) .shiki span {
 }
 
 .prose p,
-il,
-ul {
+.prose li,
+.prose ul {
   color: var(--fg);
 }
 
