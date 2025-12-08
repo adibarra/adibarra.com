@@ -24,7 +24,8 @@
     "category": "webapps"
   },
   {
-    "name": "Game Starter",
+    "name": "Raylib Starter",
+    "repo": "https://github.com/adibarra/raylib-starter",
     "desc": "A Raylib starter template with scene management and other utilities for new games, based on the engine I built for Mycelium Maze.",
     "icon": "i-carbon:game-console",
     "date": "2025",
@@ -65,8 +66,7 @@
   },
   {
     "name": "Mycelium Maze",
-    "repo": "https://github.com/adibarra/mycelium-maze",
-    "desc": "A raycasted dungeon crawler built in C++ with raylib for CS 4332. Features turn-based RPG combat, inventory systems, and multiple floors with boss fights.",
+    "desc": "A raycasted dungeon crawler built in C++ with raylib. Features turn-based RPG combat, inventory systems, and multiple floors with boss fights.",
     "icon": "i-carbon:tree",
     "date": "2025",
     "category": "games"
@@ -149,7 +149,6 @@
   },
   {
     "name": "Blackjack C++",
-    "repo": "https://github.com/adibarra/blackjack-cpp",
     "desc": "A console-based Blackjack card game in C++ with ASCII card rendering, hit/stand/split mechanics, and automatic deck reshuffling.",
     "icon": "i-mdi:cards-outline",
     "date": "2023",
@@ -174,7 +173,6 @@
   },
   {
     "name": "Server Commander",
-    "repo": "https://github.com/adibarra/Server-Commander",
     "desc": "A TypeScript Discord bot for controlling game servers with modular slash commands, event listeners, and REST API integration.",
     "icon": "i-lucide:server",
     "date": "2023",
@@ -273,19 +271,19 @@
     "category": "games"
   },
   {
+    "name": "Tower Defense Remastered",
+    "repo": "https://github.com/adibarra/TowerDefenseRemastered",
+    "desc": "A remastered tower defense game where players strategically defend against increasing enemy waves, inspired by Bloons Tower Defense.",
+    "icon": "i-carbon:bastion-host",
+    "date": "2018",
+    "category": "games"
+  },
+  {
     "name": "UNO Online",
     "repo": "https://github.com/adibarra/UNOnline",
     "desc": "An extension of my UNO clone game adding online multiplayer functionality, featuring matchmaking, lobbies, and real-time gameplay.",
     "icon": "i-mdi:cards-outline",
     "date": "2018",
-    "category": "games"
-  },
-  {
-    "name": "Tank Battle",
-    "repo": "https://github.com/adibarra/TankBattle",
-    "desc": "A simple tank battle game where players control a tank and fight against three AI-controlled tanks in an arena with powerups.",
-    "icon": "i-carbon:tank",
-    "date": "2017",
     "category": "games"
   },
   {
@@ -314,11 +312,11 @@
     "category": "games"
   },
   {
-    "name": "Tower Defense Remastered",
-    "repo": "https://github.com/adibarra/TowerDefenseRemastered",
-    "desc": "A remastered tower defense game where players strategically defend against increasing enemy waves, inspired by Bloons Tower Defense.",
-    "icon": "i-carbon:bastion-host",
-    "date": "2017",
+    "name": "Tank Battle",
+    "repo": "https://github.com/adibarra/TankBattle",
+    "desc": "A simple tank battle game where players control a tank and fight against three AI-controlled tanks in an arena with powerups.",
+    "icon": "i-carbon:tank",
+    "date": "2016",
     "category": "games"
   },
   {
