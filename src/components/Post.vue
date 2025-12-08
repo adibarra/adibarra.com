@@ -7,6 +7,7 @@ const { frontmatter } = defineProps({
 })
 const router = useRouter()
 const content = ref<HTMLDivElement>()
+let navigateTimeoutId: ReturnType<typeof setTimeout> | null = null
 
 onMounted(() => {
   const navigate = () => {
@@ -48,7 +49,14 @@ onMounted(() => {
   useEventListener(window, 'hashchange', navigate)
   useEventListener(content.value!, 'click', handleAnchors, { passive: false })
   navigate()
-  setTimeout(navigate, 500)
+  navigateTimeoutId = setTimeout(navigate, 500)
+})
+
+onUnmounted(() => {
+  if (navigateTimeoutId) {
+    clearTimeout(navigateTimeoutId)
+    navigateTimeoutId = null
+  }
 })
 </script>
 
