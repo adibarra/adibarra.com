@@ -1,8 +1,9 @@
+import type { PostFrontmatter } from './types'
 import 'vue-router'
 
 declare module 'vue-router' {
   interface RouteMeta {
-    frontmatter: any
+    frontmatter: PostFrontmatter
   }
 }
 

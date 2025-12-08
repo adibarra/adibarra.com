@@ -3,6 +3,16 @@ import type { Router } from 'vue-router'
 
 export type UserModule = (ctx: { app: App, router: Router }) => void
 
+export interface PostFrontmatter {
+  title: string
+  display: string
+  date?: string
+  lang?: string
+  duration?: string
+  subtitle?: string
+  upcoming?: boolean
+}
+
 export interface Post {
   path: string
   title: string
