@@ -17,10 +17,10 @@
         <span lt-md:hidden>Projects</span>
         <div i-ri-code-s-slash-line md:hidden />
       </router-link>
-      <router-link to="/posts" title="Blog">
+      <!-- <router-link to="/posts" title="Blog">
         <span lt-md:hidden>Blog</span>
         <div i-ri-article-line md:hidden />
-      </router-link>
+      </router-link> -->
       <router-link to="/resume" title="Resume">
         <span lt-md:hidden>Resume</span>
         <div i-uil-file-alt md:hidden />
