@@ -16,7 +16,7 @@ defineProps<{ item: Project }>()
 
     <div flex flex-auto flex-col justify-between>
       <div flex items-start gap-2>
-        <span text--c-accent font-600 v-html="item.name" />
+        <span text--c-accent font-600>{{ item.name }}</span>
         <div grow />
         <a
           v-if="item.link"
@@ -43,7 +43,9 @@ defineProps<{ item: Project }>()
       </div>
 
       <div>
-        <div text-sm text--c-text font-normal opacity-60 v-html="item.desc" />
+        <div text-sm text--c-text font-normal opacity-60>
+          {{ item.desc }}
+        </div>
 
         <div v-if="item.tags && item.tags.length" mt-2 flex flex-wrap items-center gap-2>
           <span v-for="(t, i) in item.tags" :key="i" rounded-full bg--c-secondary px-2 py-1 text-xxs text--c-text opacity-80>{{ t }}</span>
