@@ -9,7 +9,7 @@
   },
   {
     "name": "Rust Mini Projects",
-    "desc": "Multiple small, independent Rust projects designed for learning and practicing Rust programming concepts. Includes interactive games such as Blackjack and Guess the Number.",
+    "desc": "Multiple small, independent Rust mini-projects built for learning and practicing various Rust language specific concepts like ownership and borrowing.",
     "icon": "i-lucide:code",
     "tags": ["2025", "tools", "games"],
     "repo": "https://github.com/adibarra/rust-mini-projects"
@@ -29,7 +29,7 @@
   },
   {
     "name": "Unigram and Bigram Language Models",
-    "desc": "Unigram and bigram language models with Laplace and Add-k smoothing, unknown word handling, and perplexity evaluation.",
+    "desc": "Implementations of unigram and bigram language models with Laplace and Add-k smoothing, unknown word handling, and perplexity evaluation.",
     "icon": "i-carbon:book",
     "tags": ["2025", "machine learning"],
     "repo": "https://github.com/adibarra/hlt/tree/main/a1"
@@ -109,7 +109,7 @@
   },
   {
     "name": "EPUB Insert Generator",
-    "desc": "A Python tool for generating EPUB3 xhtml image insert pages from JSON definitions with styled layouts and OPF manifest entries.",
+    "desc": "A Python command-line tool to generate EPUB3 XHTML image-insert pages from JSON definitions, producing styled layouts and OPF manifest entries.",
     "icon": "i-carbon:book",
     "tags": ["2024", "tools"],
     "repo": "https://github.com/adibarra/epub-insert-generator"
@@ -123,7 +123,7 @@
   },
   {
     "name": "Simple Dark",
-    "desc": "A dark theme extension for Google Chrome that provides a clean, dark interface for the browser. Reminiscent of firefox's default dark theme.",
+    "desc": "A lightweight, open-source dark theme extension for Google Chrome that provides a clean, dark interface for the browser. Reminiscent of Firefox's default dark theme.",
     "icon": "i-lucide:contrast",
     "tags": ["2023", "tools"],
     "repo": "https://github.com/adibarra/simple-dark",
@@ -131,7 +131,7 @@
   },
   {
     "name": "Blackjack C++",
-    "desc": "A console-based Blackjack card game in C++ with ASCII card rendering, hit/stand/split mechanics, and automatic deck reshuffling.",
+    "desc": "A console-based single-player Blackjack card game in C++ with ASCII card rendering, hit/stand/split mechanics, and automatic deck reshuffling.",
     "icon": "i-mdi:cards-outline",
     "tags": ["2023", "games"]
   },
@@ -152,7 +152,7 @@
   },
   {
     "name": "Server Commander",
-    "desc": "A TypeScript Discord bot for controlling game servers with modular slash commands, event listeners, and REST API integration.",
+    "desc": "A TypeScript based Discord bot for controlling servers from a discord channel. Includes modular slash commands, event listeners, and REST API integration.",
     "icon": "i-lucide:server",
     "tags": ["2023", "tools", "automation"]
   },
@@ -165,7 +165,7 @@
   },
   {
     "name": "XO Market Bot",
-    "desc": "A Python automation tool for the game Crossout that automatically buys, crafts, and sells items at optimal prices using OCR and template matching.",
+    "desc": "A Python automation tool for the game Crossout that buys, crafts, and sells items at optimal prices using OCR and template matching.",
     "icon": "i-fluent:bot-24-regular",
     "tags": ["2022", "tools", "automation"],
     "repo": "https://github.com/adibarra/XO-MarketBot"
@@ -209,7 +209,7 @@
   },
   {
     "name": "Image Stylizer",
-    "desc": "A plugin-based image processing tool with extensible plugins, CLI configuration, and optimized performance using NumPy and Numba JIT compilation.",
+    "desc": "A plugin-based image processing tool with extensible plugins and optimized performance using NumPy and Numba JIT compilation.",
     "icon": "i-lucide:image",
     "tags": ["2021", "tools"],
     "repo": "https://github.com/adibarra/image-stylizer"
@@ -265,7 +265,7 @@
   },
   {
     "name": "Ultimate Tic-Tac-Toe",
-    "desc": "A much more complex variant of Tic-Tac-Toe with a 3x3 grid of smaller boards, where each move determines the next playable board.",
+    "desc": "A much more complex variant of Tic-Tac-Toe with a 3x3 grid of smaller boards, where each move determines the next playable board. Win by completing the large board.",
     "icon": "i-lucide:grid",
     "tags": ["2017", "games"],
     "repo": "https://github.com/adibarra/UltimateTicTacToe"

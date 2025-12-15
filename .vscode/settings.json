@@ -40,6 +40,7 @@
     "nocheck",
     "noopener",
     "nprogress",
+    "Numba",
     "onwarn",
     "pdfs",
     "perlin",
