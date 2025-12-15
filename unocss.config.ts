@@ -24,6 +24,8 @@ export default defineConfig({
     ['custom-outline', 'border--c-inverse outline-none rd-1 b-1'],
     ['custom-outline-hover', 'hover:bg--c-secondary focus:bg--c-secondary focus:border--c-accent focus-within:border--c-accent'],
     ['custom-icon-btn', 'outline-none inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text--c-accent focus:opacity-100 focus:text--c-accent'],
+    ['text-xs', 'text-[0.75rem] line-height-[1rem]'],
+    ['text-xxs', 'text-[0.70rem] line-height-[0.75rem]'],
   ],
   presets: [
     presetWind3(),
