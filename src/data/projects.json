@@ -16,7 +16,7 @@
   },
   {
     "name": "Clip Forge",
-    "desc": "Autonomously discovers clips from Twitch by analyzing sentiment, audio, and chat speed, and then turning them into a compilation.",
+    "desc": "Autonomously discovers clips from Twitch by analyzing sentiment, audio, and chat speed, and then turns them into a compilation.",
     "icon": "i-carbon:video",
     "tags": ["2025", "webapps", "tools"]
   },
