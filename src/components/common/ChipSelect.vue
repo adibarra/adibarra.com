@@ -269,7 +269,7 @@ onMounted(() => {
         :aria-label="placeholder"
         :aria-describedby="selected.length > 0 ? 'selected-items' : undefined"
         :placeholder="noneSelected ? placeholder : ''"
-        class="my-auto mb-1 mr-1 h-6.5 min-w-2 bg-transparent pl-1 outline-none"
+        class="my-auto mb-1 mr-1 h-6.5 min-w-2 bg-transparent pl-1 outline-none placeholder:text--c-text placeholder:opacity-60"
         @focus="(showListbox = true)"
         @keydown="handleKeydown"
       >

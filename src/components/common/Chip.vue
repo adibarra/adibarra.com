@@ -13,7 +13,7 @@ defineEmits<{
 <template>
   <div
     :aria-label="label"
-    class="w-fit flex gap-0.5 custom-outline rd-4 pl-3 pr-1"
+    class="w-fit flex gap-0.5 custom-outline border--c-inverse-2 rd-4 pl-3 pr-1"
   >
     <span class="my-auto text-base">{{ label }}</span>
     <button
