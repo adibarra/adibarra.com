@@ -7,8 +7,7 @@ defineProps<{ item: Project }>()
 <template>
   <div
     :title="item.name"
-    hover="bg-[#ffffff08]"
-    class="flex items-start rounded-lg px-4 py-3 text-lg"
+    class="flex items-start rounded-lg px-4 py-3 text-lg hover:bg-[#ffffff08]"
   >
     <div class="my-auto flex-none pb-5 pr-5">
       <div

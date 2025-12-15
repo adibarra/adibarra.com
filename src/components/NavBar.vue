@@ -26,7 +26,7 @@ import { siteConfig } from '~/config'
       </router-link>
       <!-- <router-link to="/posts" title="Blog">
         <span class="lt-md:hidden">Blog</span>
-        <div "class=i-ri-article-line md:hidden" />
+        <div class="i-ri-article-line md:hidden" />
       </router-link> -->
       <router-link to="/resume" title="Resume">
         <span class="lt-md:hidden">Resume</span>
