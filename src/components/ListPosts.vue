@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import type { Post } from '~/types'
+import type { Post, PostRoute } from '~/types'
 
 const router = useRouter()
 const posts: Post[] = router.getRoutes()
   .filter(i => i.path.startsWith('/posts/'))
-  .filter(i => i.meta.frontmatter && i.meta.frontmatter.date)
+  .filter(i => i.meta.frontmatter)
+  .map(i => i as PostRoute)
   .sort((a, b) => +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date))
   .map(i => ({
     path: i.path,
