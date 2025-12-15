@@ -19,7 +19,7 @@ const posts: Post[] = router.getRoutes()
 <template>
   <ul>
     <template v-if="!posts.length">
-      <div class="py2 op-50">
+      <div class="py2 opacity-50">
         { nothing here yet }
       </div>
     </template>
@@ -32,7 +32,7 @@ const posts: Post[] = router.getRoutes()
         v-if="!isSameYear(route.date, posts[idx - 1]?.date)"
         class="pointer-events-none relative h-20"
       >
-        <span class="absolute left--3rem top--2rem text-8em font-600 op-4">
+        <span class="absolute left--3rem top--2rem text-8em font-600 opacity-4">
           {{ getYear(route.date) }}
         </span>
       </div>
@@ -53,11 +53,11 @@ const posts: Post[] = router.getRoutes()
             </span>
           </div>
 
-          <div class="text-sm op-50">
+          <div class="text-sm opacity-50">
             {{ formatDate(route.date) }}
             <span
               v-if="route.duration"
-              class="op-80"
+              class="opacity-80"
             >
               · {{ route.duration }}
             </span>

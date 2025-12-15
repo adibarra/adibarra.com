@@ -18,11 +18,11 @@ import { siteConfig } from '~/config'
       <div class="grow" />
       <router-link to="/" title="Home">
         <span class="lt-md:hidden">Home</span>
-        <div class="i-carbon:home md:hidden" />
+        <div class="i-carbon:home md:hidden" aria-hidden="true" />
       </router-link>
       <router-link to="/projects" title="Projects">
         <span class="lt-md:hidden">Projects</span>
-        <div class="i-ri-code-s-slash-line md:hidden" />
+        <div class="i-ri-code-s-slash-line md:hidden" aria-hidden="true" />
       </router-link>
       <!-- <router-link to="/posts" title="Blog">
         <span class="lt-md:hidden">Blog</span>
@@ -30,7 +30,7 @@ import { siteConfig } from '~/config'
       </router-link> -->
       <router-link to="/resume" title="Resume">
         <span class="lt-md:hidden">Resume</span>
-        <div class="i-uil-file-alt md:hidden" />
+        <div class="i-uil-file-alt md:hidden" aria-hidden="true" />
       </router-link>
       <a
         :href="siteConfig.githubUrl"

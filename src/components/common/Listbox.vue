@@ -47,7 +47,7 @@ watch(() => [props.activeIndex, props.show], () => {
     >
       <div
         v-if="items.length === 0"
-        class="flex grow gap-2 rd-b-2 pl-2 op-70 outline-none"
+        class="flex grow gap-2 rd-b-2 pl-2 opacity-70 outline-none"
       >
         <div class="i-carbon:warning-hex my-auto" aria-hidden="true" />
         <span>No matches</span>

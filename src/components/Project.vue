@@ -14,6 +14,7 @@ defineProps<{ item: Project }>()
       <div
         :class="item.icon || 'i-carbon:unknown'"
         class="text-3xl text--c-text opacity-60"
+        aria-hidden="true"
       />
     </div>
 
@@ -31,7 +32,7 @@ defineProps<{ item: Project }>()
           rel="noopener"
           class="custom-icon-btn !border-none"
         >
-          <div i-carbon:link />
+          <div class="i-carbon:link" aria-hidden="true" />
         </a>
         <a
           v-if="item.repo"
@@ -41,7 +42,7 @@ defineProps<{ item: Project }>()
           rel="noopener"
           class="custom-icon-btn !border-none"
         >
-          <div i-carbon:logo-github />
+          <div class="i-carbon:logo-github" aria-hidden="true" />
         </a>
       </div>
 
