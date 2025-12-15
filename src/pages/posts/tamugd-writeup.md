@@ -17,8 +17,8 @@ When I first got to college, it was pretty overwhelming to have almost complete 
 This is when I first stumbled upon sites like [anex.us](https://anex.us) and [jippylong12.xyz](http://jippylong12.xyz/tamuFGD/). Those sites were a godsend for me, and I used them to help me decide what courses to take and what professors to take them with. However, I found that both of them had terrible UX and were missing many quality-of-life features. At the same time, other more modern sites like ~~[tamugradedistributions](https://tamugradedistributions.herokuapp.com/)~~ (update: dead project) had better UX but tended to be slow and feel clunky.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/anex.png" alt="Screenshot of anex.us" rounded-lg dark:invert />
-  <figcaption class="caption">Screenshot of anex.us<span hidden dark:inline>&nbsp;(inverted)</span></figcaption>
+  <img src="/assets/posts/tamugd-writeup/anex.png" alt="Screenshot of anex.us" class="rounded-lg dark:invert" />
+  <figcaption class="caption">Screenshot of anex.us<span class="hidden dark:inline">&nbsp;(inverted)</span></figcaption>
 </figure>
 
 So my solution? Make my own site that would be as fast and responsive as anex but with a better UX and more features.
@@ -38,7 +38,7 @@ Before anything else, I had to determine where I could find the course data. Aft
 However, the data was not in a format that was easy to work with. The Registrar's Office published the reports as PDFs. PDfs are notorious for being difficult to work with programmatically. So before I could use the data, I would have to convert the data from the PDFs into a format I could manipulate.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/data-extraction.png" alt="Finding a way to parse PDFs" rounded-lg dark:invert />
+  <img src="/assets/posts/tamugd-writeup/data-extraction.png" alt="Finding a way to parse PDFs" class="rounded-lg dark:invert" />
   <figcaption class="caption">Finding a way to parse PDFs</figcaption>
 </figure>
 
@@ -96,7 +96,6 @@ const query = `search?d=${department}&c=${course}`
 fetch(query).then((response) => {
   response.json().then((responseJSON) => {
     // Do something with the data
-    console.log(responseJSON)
   }).catch(() => reject('Server error'))
 }).catch(err => reject(err))
 ```
@@ -126,8 +125,7 @@ The response is sent in JSON and looks something like this:
     "numU": 0,
     "numQ": 0,
     "numX": 0
-  },
-  ...
+  }
 ]
 ```
 
@@ -170,7 +168,7 @@ With this, I was able to start designing the site. I decided to segment the site
 Compartmentalizing the site into these sections made it easier to design and implement.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/layout.png" alt="Early sketch of layout" rounded-lg dark:invert />
+  <img src="/assets/posts/tamugd-writeup/layout.png" alt="Early sketch of layout" class="rounded-lg dark:invert" />
   <figcaption class="caption">Early sketch of layout</figcaption>
 </figure>
 
@@ -183,14 +181,14 @@ After I had a rough idea of what the site should look like, I started implementi
 The header was pretty simple. It just contained the title of the site, the logo, and a dark mode toggle button.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/header.png" alt="The site header" rounded-lg />
+  <img src="/assets/posts/tamugd-writeup/header.png" alt="The site header" class="rounded-lg" />
   <figcaption class="caption">The site header</figcaption>
 </figure>
 
 The footer was a bit more complicated. Although it contained only a few elements, I had to figure out how to get it to stick to the bottom of the page. I ended up putting the entire site in a flexbox and setting the portion of the site which housed the main content to `flex-grow: 1`. Doing this allowed the footer to always be at the bottom of the page. Additionally, if the content was shorter than the viewport, it would be attached to the bottom of the viewport.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/footer.png" alt="The site footer" rounded-lg />
+  <img src="/assets/posts/tamugd-writeup/footer.png" alt="The site footer" class="rounded-lg" />
   <figcaption class="caption">The site footer</figcaption>
 </figure>
 
@@ -199,7 +197,7 @@ The footer was a bit more complicated. Although it contained only a few elements
 Once I implemented the header and footer, I moved on to the search bar pane. This was the first pane that I implemented. The search bar pane contained inputs for the course's department and course number. It also had a search button that fired off an API request when pressed.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/search-pane.png" alt="The search pane" rounded-lg />
+  <img src="/assets/posts/tamugd-writeup/search-pane.png" alt="The search pane" class="rounded-lg" />
   <figcaption class="caption">The search pane</figcaption>
 </figure>
 
@@ -210,7 +208,7 @@ I made sure to make the search bar pane as simple as possible. I also wanted use
 The main chart pane was the most complicated pane to implement. It would contain a graph showing the average GPA for a course over time, and doing so would require a lot of number crunching on the data returned from the API. I decided to use <GithubLink repo="chartjs/Chart.js" /> to implement the graph. I had some difficulty getting the graph to look how I wanted it to, but after a few hours of tinkering, I got it to look how I wanted and made it responsive.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/main-chart-pane.png" alt="The main chart pane with placeholder data" rounded-lg />
+  <img src="/assets/posts/tamugd-writeup/main-chart-pane.png" alt="The main chart pane with placeholder data" class="rounded-lg" />
   <figcaption class="caption">The main chart pane with placeholder data</figcaption>
 </figure>
 
@@ -225,7 +223,7 @@ I again used <GithubLink repo="jjj/chosen" /> to make the professor and semester
 The last part of the settings pane was the year range selector. I wanted to be able to select a min and max year from the possible values. However, as far as I could tell, there was no built-in way to add a range slider in HTML. So, I found a library called <GithubLink repo="nitinhayaran/jRange" />, which allowed me to add a range slider to the site. I also made sure to make the slider responsive to look good on mobile devices.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/settings-pane.png" alt="The settings pane" rounded-lg />
+  <img src="/assets/posts/tamugd-writeup/settings-pane.png" alt="The settings pane" class="rounded-lg" />
   <figcaption class="caption">The settings pane</figcaption>
 </figure>
 
@@ -236,7 +234,7 @@ The second to last pane I implemented was the secondary charts pane. This pane w
 Once again, the plots for each of these charts were made using <GithubLink repo="chartjs/Chart.js" />. This pane also resizes itself to stack the charts vertically if the viewport is small. The secondary charts also depended on data from the API, so I had to wait until the number-crunching logic was implemented to fill the charts with the correct numbers.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/secondary-charts-pane.png" alt="The secondary charts pane" rounded-lg />
+  <img src="/assets/posts/tamugd-writeup/secondary-charts-pane.png" alt="The secondary charts pane" class="rounded-lg" />
   <figcaption class="caption">The secondary charts pane</figcaption>
 </figure>
 
@@ -245,7 +243,7 @@ Once again, the plots for each of these charts were made using <GithubLink repo=
 The final pane I implemented was the raw data table. This pane would contain a table with the raw data for the course, which would be sortable and filterable. I used <GithubLink repo="grid-js/gridjs" /> to implement the table. This table would draw data directly from what was returned via the API. I also made sure to make the table responsive to look good on mobile devices. The table was also hidden by default since it was so large and would only be shown if the user clicked the "Display Raw Data" button in the settings pane.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/raw-data-table-pane.png" alt="The raw data table pane" rounded-lg />
+  <img src="/assets/posts/tamugd-writeup/raw-data-table-pane.png" alt="The raw data table pane" class="rounded-lg" />
   <figcaption class="caption">The raw data table pane</figcaption>
 </figure>
 
@@ -275,7 +273,7 @@ This phase of the project was easily the most time-consuming. I had to ensure th
 After implementing the logic, I could finally put the site together and see the final product. I was pleased with the way the site turned out. Due to adjusting the site layout based on screen size, the site also looked good on mobile devices. Here's a screenshot of the completed site.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/final-product.png" alt="The final product" rounded-lg dark:border-1 border--c-tertiary />
+  <img src="/assets/posts/tamugd-writeup/final-product.png" alt="The final product" class="rounded-lg dark:border-1 border--c-tertiary" />
   <figcaption class="caption">The final product</figcaption>
 </figure>
 

@@ -19,7 +19,7 @@ In [my last webdev post](/posts/web-optimization), I talked about how a few ways
 Cloudflare is a Content Delivery Network (CDN) that helps speed up your website. It also provides a few other services like DDoS protection, SSL, and more. But how does it do that? Well, Cloudflare has a network of servers around the world that cache your website's content.
 
 <figure>
-  <img src="/assets/posts/using-cloudflare/with-cloudflare.png" alt="Sketch of Cloudflare's CDN" rounded-lg dark:invert />
+  <img src="/assets/posts/using-cloudflare/with-cloudflare.png" alt="Sketch of Cloudflare's CDN" class="rounded-lg dark:invert" />
   <figcaption class="caption">Cloudflare caches your website's content on its servers around the world.</figcaption>
 </figure>
 

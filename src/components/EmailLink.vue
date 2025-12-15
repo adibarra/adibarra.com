@@ -9,11 +9,11 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <span text-nowrap text--c-text>
-    <div i-carbon:email relative top-1 flex-inline />
+  <span class="text-nowrap text--c-text">
+    <div class="i-carbon:email relative top-1 flex-inline" />
     <a
       :href="`mailto:${props.to}`"
-      ml-1
+      class="ml-1"
     >
       {{ props.to }}
     </a>

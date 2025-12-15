@@ -30,7 +30,7 @@ async function downloadFile() {
     @click="downloadFile"
   >
     Download as PDF
-    <div i-carbon-document-download inline-block align-text-bottom />
+    <div class="i-carbon-document-download inline-block align-text-bottom" />
   </button>
 </template>
 

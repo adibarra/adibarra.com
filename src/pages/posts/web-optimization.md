@@ -23,7 +23,7 @@ The answer is simple. It's often worth the effort.
 ### A Case Study
 
 <figure>
-  <img src="/assets/posts/web-optimization/akamai.png" alt="Poor rendition of Akamai's logo" rounded-lg />
+  <img src="/assets/posts/web-optimization/akamai.png" alt="Poor rendition of Akamai's logo" class="rounded-lg" />
   <figcaption class="caption">Poor rendition of Akamai's logo</figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ Here are some of the key findings:
 What this tells us is that optimizing for these two factors has a significant effect on whether users stay on the website. This is especially true for websites with many competitors.
 
 <figure>
-  <img src="/assets/posts/web-optimization/cloudflare.png" alt="Poor rendition of Cloudflare's logo" rounded-lg light:invert />
+  <img src="/assets/posts/web-optimization/cloudflare.png" alt="Poor rendition of Cloudflare's logo" class="rounded-lg light:invert" />
   <figcaption class="caption">Poor rendition of Cloudflare's logo</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ Minifying is the process of removing compressing code. This can include removing
 The result is usually a **much** smaller file size, which translates to faster load times.
 
 <figure>
-  <img src="/assets/posts/web-optimization/minify.png" alt="JQuery 3.6.1 minified using UglifyJS 3" rounded-lg dark:invert />
+  <img src="/assets/posts/web-optimization/minify.png" alt="JQuery 3.6.1 minified using UglifyJS 3" class="rounded-lg dark:invert" />
   <figcaption class="caption">JQuery 3.6.1 minified using UglifyJS 3</figcaption>
 </figure>
 
@@ -77,7 +77,7 @@ Bundling is another common optimization technique. However, it can be a bit more
 A website typically has to load many different files. These files usually include HTML, CSS, JavaScript, and images. However, each of these files has to be downloaded separately. This can cause a lot of overhead, especially for smaller files. Many files can only be executed after downloading others. So reducing the number of requests that need to be made is especially important for websites with many files.
 
 <figure>
-  <img src="/assets/posts/web-optimization/bundling.png" alt="Example of bundling" rounded-lg dark:invert />
+  <img src="/assets/posts/web-optimization/bundling.png" alt="Example of bundling" class="rounded-lg dark:invert" />
   <figcaption class="caption">Example of bundling</figcaption>
 </figure>
 
@@ -92,7 +92,7 @@ Lazy loading is beneficial for websites that have a lot of images.
 Lazy loading is the process of only loading images when they are in the viewport. Enabling lazy loading allows your website to only load assets in view. This can reduce website load time and bandwidth if the user does not scroll to every image. Lazy loading can be implemented with either JS or plain HTML.
 
 <figure>
-  <img src="/assets/posts/web-optimization/lazy-loading.png" alt="Example of lazy loading" rounded-lg dark:invert />
+  <img src="/assets/posts/web-optimization/lazy-loading.png" alt="Example of lazy loading" class="rounded-lg dark:invert" />
   <figcaption class="caption">Example of lazy loading</figcaption>
 </figure>
 
@@ -111,7 +111,7 @@ Caching is storing a copy of a file on the user's device. Caching allows the use
 Caching can be done in a few different ways. The most common of which is browser caching. Browser Caching can be enabled by setting the `Cache-Control` header to a value like `public, max-age=31536000`. This header will tell the browser to cache the file sent with this header for a year.
 
 <figure>
-  <img src="/assets/posts/web-optimization/caching.png" alt="Cache-Control header from a response" rounded-lg dark:invert />
+  <img src="/assets/posts/web-optimization/caching.png" alt="Cache-Control header from a response" class="rounded-lg dark:invert" />
   <figcaption class="caption">Cache-Control header from a response</figcaption>
 </figure>
 
@@ -128,7 +128,7 @@ Compression should always be used. It is so ubiquitous that it is built into alm
 In a nutshell, compression reduces filesize by building a dictionary of common characters. This allows the server to send a smaller file to the client. The client then uses the dictionary to reconstruct the original file. Compression can drastically reduce the size of a file, especially for text-based files.
 
 <figure>
-  <img src="/assets/posts/web-optimization/compression.png" alt="Example of compression" rounded-lg dark:invert />
+  <img src="/assets/posts/web-optimization/compression.png" alt="Example of compression" class="rounded-lg dark:invert" />
   <figcaption class="caption">Example of compression</figcaption>
 </figure>
 

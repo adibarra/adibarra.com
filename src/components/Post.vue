@@ -61,21 +61,33 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div v-if="frontmatter.display ?? frontmatter.title" class="m-auto mb-8 prose">
+  <div
+    v-if="frontmatter.display ?? frontmatter.title"
+    class="m-auto mb-8 prose"
+  >
     <h1 class="mb-0">
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
-    <p v-if="frontmatter.date" class="op-50 !mt--2">
+    <p
+      v-if="frontmatter.date"
+      class="op-50 !mt--2"
+    >
       {{ formatDate(frontmatter.date) }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
     </p>
-    <p v-if="frontmatter.subtitle" class="italic op-50 !mt--6">
+    <p
+      v-if="frontmatter.subtitle"
+      class="italic op-50 !mt--6"
+    >
       {{ frontmatter.subtitle }}
     </p>
   </div>
   <article ref="content">
     <slot />
   </article>
-  <div v-if="$route.path !== '/'" class="m-auto mb-8 mt-8 prose">
+  <div
+    v-if="$route.path !== '/'"
+    class="m-auto mb-8 mt-8 prose"
+  >
     <router-link
       :to="$route.path.split('/').slice(0, -1).join('/') || '/'"
       class="font-mono no-underline op-50 hover:op-75"

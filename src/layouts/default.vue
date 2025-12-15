@@ -1,6 +1,6 @@
 <template>
   <NavBar />
-  <main px-7 py-10>
+  <main class="px-7 py-10">
     <RouterView />
   </main>
 </template>

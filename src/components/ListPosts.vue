@@ -19,37 +19,46 @@ const posts: Post[] = router.getRoutes()
 <template>
   <ul>
     <template v-if="!posts.length">
-      <div py2 op-50>
+      <div class="py2 op-50">
         { nothing here yet }
       </div>
     </template>
 
-    <template v-for="route, idx in posts" :key="route.path">
+    <template
+      v-for="route, idx in posts"
+      :key="route.path"
+    >
       <div
         v-if="!isSameYear(route.date, posts[idx - 1]?.date)"
-        pointer-events-none relative h-20
+        class="pointer-events-none relative h-20"
       >
-        <span absolute left--3rem top--2rem text-8em font-600 op-4>{{ getYear(route.date) }}</span>
+        <span class="absolute left--3rem top--2rem text-8em font-600 op-4">
+          {{ getYear(route.date) }}
+        </span>
       </div>
       <router-link
-        class="item"
         :to="route.upcoming ? '' : route.path"
-        mb-6 mt-2 block font-normal underline-none
+        class="item mb-6 mt-2 block font-normal underline-none"
       >
-        <li no-underline>
-          <div text-lg leading-1.2em>
+        <li class="no-underline">
+          <div class="text-lg leading-1.2em">
             <span
               v-if="route.upcoming"
-              mr-2 border-1 border--c-accent rounded pb-0.2 pl-2 pr-1 align-middle text-xs text--c-accent md:ml--20.5
+              class="mr-2 border-1 border--c-accent rounded pb-0.2 pl-2 pr-1 align-middle text-xs text--c-accent md:ml--20.5"
             >
               upcoming
             </span>
-            <span align-middle>{{ route.title }}</span>
+            <span class="align-middle">
+              {{ route.title }}
+            </span>
           </div>
 
-          <div text-sm op-50>
+          <div class="text-sm op-50">
             {{ formatDate(route.date) }}
-            <span v-if="route.duration" op-80>
+            <span
+              v-if="route.duration"
+              class="op-80"
+            >
               · {{ route.duration }}
             </span>
           </div>

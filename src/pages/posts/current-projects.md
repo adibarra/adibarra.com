@@ -28,7 +28,7 @@ Here's a quick rundown of my current projects:
 Unfortunately, I don't have any screenshots of this project yet since I've been mostly working on how the client and server will interact. But here's a quick mockup of what I'm going for.
 
 <figure>
-  <img src="/assets/posts/current-projects/deckio-mockup.png" alt="Mockup of deck.io" rounded-lg dark:invert />
+  <img src="/assets/posts/current-projects/deckio-mockup.png" alt="Mockup of deck.io" class="rounded-lg dark:invert" />
   <figcaption class="caption">Mockup of deck.io</figcaption>
 </figure>
 

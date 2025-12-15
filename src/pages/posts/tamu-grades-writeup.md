@@ -15,7 +15,7 @@ upcoming: true
 Yup, that's right, I re-wrote the original TAMU Grade Distribution website that I made in 2022 and posted about [here](/posts/tamugd-writeup). My goal with the original site was to learn about web development, and as a result, the code isn't great, and its UI/UX isn't much better.
 
 <figure>
-  <img src="/assets/posts/tamugd-writeup/final-product.png" alt="Screenshot of the original version" rounded-lg dark:border-1 border--c-tertiary />
+  <img src="/assets/posts/tamugd-writeup/final-product.png" alt="Screenshot of the original version" class="rounded-lg dark:border-1 border--c-tertiary" />
   <figcaption class="caption">Screenshot of the original version</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ The old version of the site was divided into a static frontend and a backend, wh
 The project now uses a monorepo architecture with over 10 packages. This allows me to share code between the frontend and backend, such as types and constants while keeping them separate. It also makes it easier to manage dependencies and run scripts across the application.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Architecture diagram" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Architecture diagram" class="rounded-lg" />
   <figcaption class="caption">Architecture diagram</figcaption>
 </figure>
 
@@ -96,7 +96,7 @@ Next up, I needed to develop a method to scrape all of this data from the differ
 In this step, I also decided to implement a caching system to prevent unnecessary requests to the data sources. This would prevent the application from making requests for data that is already present or hasn't changed since the last request.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Caching scraper requests" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Caching scraper requests" class="rounded-lg" />
   <figcaption class="caption">Caching scraper requests</figcaption>
 </figure>
 
@@ -111,7 +111,7 @@ For the majority of the data sources, this process is quite straightforward. It 
 The grade distribution data is stored in PDFs which are notoriously difficult to parse. In order to extract the data from these PDFs, I decided to use <GithubLink repo="mozilla/pdf.js" />. This library is the golden standard for rendering PDFs in browsers, but more importantly, it also provides an API for extracting text from PDFs.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The data parser in action" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The data parser in action" class="rounded-lg" />
   <figcaption class="caption">The data parser in action</figcaption>
 </figure>
 
@@ -130,7 +130,7 @@ In order to store all of this data, I was going to need a much more complex data
 However, the new schema needed to be able to store much more data and maintain the relationships between them. I ended up with a schema that looks something like this:
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The new database schema" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The new database schema" class="rounded-lg" />
   <figcaption class="caption">The new database schema</figcaption>
 </figure>
 
@@ -207,7 +207,7 @@ The wireframes were helpful in planning out the different components and how the
 The main page of the site is where users will land when they first visit. I wanted to make this page as clean and simple as possible. So, I decided to take some inspiration from Google's search page and keep the design to a simple search bar.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/wireframe-main.png" alt="Wireframe of the main page" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/wireframe-main.png" alt="Wireframe of the main page" class="rounded-lg" />
   <figcaption class="caption">Wireframe of the main page</figcaption>
 </figure>
 
@@ -218,7 +218,7 @@ At the top of the page, I also included a series of links to other parts of the 
 Hitting the search button on the main page will take the user to the search page where they can view the results of their search. This page uses the same search bar at the top of the page. However, it utilizes the rest of the available space to display the results. This allows users to quickly scan through the results and find the course they are looking for.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/wireframe-search.png" alt="Wireframe of the search page" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/wireframe-search.png" alt="Wireframe of the search page" class="rounded-lg" />
   <figcaption class="caption">Wireframe of the search page</figcaption>
 </figure>
 
@@ -229,7 +229,7 @@ Another important feature of this page is the ability to tell at a glance which 
 Clicking on any result on the search page will take the user to the analyze page. This page displays all of the grade distribution data for the selected course. It also includes a series of filters that allow users to narrow down the results by semester, year, professor, and other criteria.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/wireframe-analyze.png" alt="Wireframe of the analyze page" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/wireframe-analyze.png" alt="Wireframe of the analyze page" class="rounded-lg" />
   <figcaption class="caption">Wireframe of the analyze page</figcaption>
 </figure>
 
@@ -250,7 +250,7 @@ I'll briefly cover some of the more interesting or complex components.
 #### SearchBox
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The SearchBox component" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The SearchBox component" class="rounded-lg" />
   <figcaption class="caption">The SearchBox component</figcaption>
 </figure>
 
@@ -261,7 +261,7 @@ The searchbox also has a secondary mode. It can be set to live-mode so that it d
 #### ChipSelect
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The ChipSelect component" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The ChipSelect component" class="rounded-lg" />
   <figcaption class="caption">The ChipSelect component</figcaption>
 </figure>
 
@@ -274,7 +274,7 @@ The component uses two-way binding to keep the selected options in sync with the
 #### Chart
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The Chart component" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The Chart component" class="rounded-lg" />
   <figcaption class="caption">The Chart component</figcaption>
   </figure>
 
@@ -289,7 +289,7 @@ To enhance user experience further, I added some smooth animations for both the 
 #### CircleBar
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The CircleBar component" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The CircleBar component" class="rounded-lg" />
   <figcaption class="caption">The CircleBar component</figcaption>
 </figure>
 
@@ -302,7 +302,7 @@ To enhance the visual appeal of the component, I added smooth animations to the 
 #### Datatable
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The Datatable component" rounded-lg />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="The Datatable component" class="rounded-lg" />
   <figcaption class="caption">The Datatable component</figcaption>
 </figure>
 
@@ -315,7 +315,7 @@ The component also allows sorting the different columns by clicking on the colum
 After many iterations and refinements, I ended up with a design that I was happy with. The new version of the site is much more visually appealing, ergonomic, and easier to use than the original. It's also much more consistent and has a more modern look and feel compared to the original.
 
 <figure>
-  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Screenshot of the analyze page" rounded-lg dark:border-1 border--c-tertiary />
+  <img src="/assets/posts/tamu-grades-writeup/placeholder.png" alt="Screenshot of the analyze page" class="rounded-lg dark:border-1 border--c-tertiary" />
   <figcaption class="caption">Screenshot of the analyze page</figcaption>
 </figure>
 

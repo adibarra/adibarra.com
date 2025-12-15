@@ -3,10 +3,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import {
   defineConfig,
-  presetAttributify,
   presetIcons,
   presetTypography,
-  presetWebFonts,
   presetWind3,
   transformerDirectives,
   transformerVariantGroup,
@@ -30,18 +28,11 @@ export default defineConfig({
   ],
   presets: [
     presetWind3(),
-    presetAttributify(),
     presetIcons({
       scale: 1.2,
       warn: true,
     }),
     presetTypography(),
-    presetWebFonts({
-      fonts: {
-        sans: 'Inter:400,600,800',
-        mono: 'DM Mono:400,600',
-      },
-    }),
   ],
   transformers: [
     transformerDirectives(),
