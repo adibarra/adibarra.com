@@ -3,7 +3,7 @@ import { siteConfig } from '~/config'
 </script>
 
 <template>
-  <header z-40 text--c-text>
+  <header class="z-40 text--c-text">
     <router-link
       to="/"
       focusable="false"
@@ -33,7 +33,7 @@ import { siteConfig } from '~/config'
         <div class="i-uil-file-alt md:hidden" aria-hidden="true" />
       </router-link>
       <a
-        :href="siteConfig.githubUrl"
+        :href="`https://github.com/${siteConfig.github}`"
         title="GitHub"
         target="_blank"
         rel="noopener"
