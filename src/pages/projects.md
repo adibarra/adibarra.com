@@ -1,7 +1,7 @@
 ---
 title: Projects | Alec Ibarra
 display: Projects
-subtitle: A collection of interesting projects I've worked on, sorted by recency.
+subtitle: Some of the interesting projects I've worked on, sorted by recency.
 ---
 
 <ListProjects />
