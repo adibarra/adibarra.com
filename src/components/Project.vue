@@ -1,13 +1,25 @@
 <script setup lang="ts">
 import type { Project } from '~/types'
 
-defineProps<{ item: Project }>()
+const props = defineProps<{ item: Project }>()
+const flashing = ref(false)
+
+onMounted(() => {
+  if (window.location.hash === `#${props.item.id}`) {
+    flashing.value = true
+    setTimeout(() => {
+      flashing.value = false
+    }, 1000)
+  }
+})
 </script>
 
 <template>
   <div
+    :id="item.id"
     :title="item.name"
-    class="flex items-start rounded-lg px-4 py-3 text-lg hover:bg-[#ffffff08]"
+    class="flex scroll-mt-8 items-start rounded-lg px-4 py-3 text-lg transition-all duration-400 ease-in-out hover:bg-[#ffffff08]"
+    :class="{ 'bg-[#ffffff10]': flashing }"
   >
     <div class="my-auto flex-none pb-5 pr-5">
       <div

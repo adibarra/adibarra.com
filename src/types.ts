@@ -31,6 +31,7 @@ export interface Post {
 }
 
 export interface Project {
+  id: string
   name: string
   desc: string
   icon?: string
