@@ -61,8 +61,7 @@
     "desc": "A web app to discover connections between artists and albums through their musical collaborations. Built with Next.js, Express, and Supabase.",
     "icon": "i-lucide:chart-line",
     "tags": ["2025", "webapps"],
-    "repo": "https://github.com/adibarra/harmonic-link",
-    "link": "https://harmonic-link.vercel.app"
+    "repo": "https://github.com/adibarra/harmonic-link"
   },
   {
     "id": "mycelium-maze",
@@ -110,8 +109,7 @@
     "desc": "A trivia game for competing on leaderboards with random categories and questions. Includes stat tracking. Built with Vue.js, FastAPI, and PostgreSQL.",
     "icon": "i-akar-icons:question",
     "tags": ["2024", "webapps", "games"],
-    "repo": "https://github.com/adibarra/query-quest",
-    "link": "https://quest.adibarra.com"
+    "repo": "https://github.com/adibarra/query-quest"
   },
   {
     "id": "fintasy",
@@ -119,8 +117,7 @@
     "desc": "Paper trading platform simulating stock trading with tournaments and leaderboards. Built with Vue.js, Python FastAPI, PostgreSQL, and TypeScript.",
     "icon": "i-carbon:chart-candlestick",
     "tags": ["2024", "webapps"],
-    "repo": "https://github.com/adibarra/fintasy",
-    "link": "https://fintasy.adibarra.com"
+    "repo": "https://github.com/adibarra/fintasy"
   },
   {
     "id": "epub-insert-generator",
