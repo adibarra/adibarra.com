@@ -1,3 +1,4 @@
+import { execSync } from 'node:child_process'
 import path from 'node:path'
 import Shiki from '@shikijs/markdown-it'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
@@ -22,6 +23,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import WebfontDownload from 'vite-plugin-webfont-dl'
 import { slugify } from './src/scripts/slugify.js'
 
+const commitHash = (process.env.COMMIT_HASH || execSync('git rev-parse HEAD').toString()).trim()
 export default defineConfig({
   lint: {
     plugins: ['oxc', 'typescript', 'unicorn', 'react', 'import'],
@@ -890,5 +892,9 @@ export default defineConfig({
 
   ssr: {
     noExternal: ['workbox-window'],
+  },
+
+  define: {
+    'import.meta.env.COMMIT_HASH': JSON.stringify(commitHash.slice(0, 7)),
   },
 })

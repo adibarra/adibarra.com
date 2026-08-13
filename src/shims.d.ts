@@ -7,6 +7,10 @@ declare module 'vue-router' {
   }
 }
 
+interface ImportMetaEnv {
+  readonly COMMIT_HASH: string
+}
+
 declare interface Window {
   // extend the window
 }

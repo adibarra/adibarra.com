@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const commitHash = import.meta.env.COMMIT_HASH
+
 useHead({
   link: [
     {
@@ -13,6 +15,13 @@ useHead({
 <template>
   <div class="flex flex-col font-sans min-h-svh">
     <RouterView />
+    <span
+      aria-label="Current deployment revision"
+      class="fixed bottom-0.5 left-1 text-sm op-5"
+      style="color: var(--c-text)"
+    >
+      {{ commitHash }}
+    </span>
   </div>
 </template>
 
