@@ -9,10 +9,7 @@ import { siteConfig } from '~/config'
       focusable="false"
       class="absolute m-6 h-10 w-10 select-none outline-none lg:fixed"
     >
-      <img
-        :src="`/favicon${isDark ? '-dark' : ''}.svg`"
-        alt="favicon"
-      >
+      <img :src="`/favicon${isDark ? '-dark' : ''}.svg`" alt="favicon" />
     </router-link>
     <nav class="flex flex-row items-center gap-5 p-8">
       <div class="grow" />
@@ -40,19 +37,10 @@ import { siteConfig } from '~/config'
       >
         <div class="i-uil-github-alt" />
       </a>
-      <a
-        :href="`mailto:${siteConfig.email}`"
-        title="Email"
-        target="_blank"
-        rel="noopener"
-      >
+      <a :href="`mailto:${siteConfig.email}`" title="Email" target="_blank" rel="noopener">
         <div class="i-feather-mail" />
       </a>
-      <a
-        title="Toggle Color Scheme"
-        class="cursor-pointer"
-        @click="toggleTheme()"
-      >
+      <a title="Toggle Color Scheme" class="cursor-pointer" @click="toggleTheme()">
         <div class="i-ri-sun-line dark:i-ri-moon-line" />
       </a>
     </nav>

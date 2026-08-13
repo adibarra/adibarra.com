@@ -17,18 +17,14 @@ async function downloadFile() {
     link.click()
     document.body.removeChild(link)
     URL.revokeObjectURL(objectUrl)
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error)
   }
-};
+}
 </script>
 
 <template>
-  <button
-    class="download-btn"
-    @click="downloadFile"
-  >
+  <button class="download-btn" @click="downloadFile">
     Download as PDF
     <div class="i-carbon-document-download inline-block align-text-bottom" />
   </button>

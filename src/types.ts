@@ -1,7 +1,7 @@
 import type { App } from 'vue'
 import type { Router, RouteRecordNormalized } from 'vue-router'
 
-export type UserModule = (ctx: { app: App, router: Router }) => void
+export type UserModule = (ctx: { app: App; router: Router }) => void
 
 export interface PostFrontmatter {
   title: string

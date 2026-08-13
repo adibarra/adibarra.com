@@ -24,9 +24,7 @@ const filteredProjects = computed(() => {
   if (selectedTags.value.length === 0) {
     return projects
   }
-  return projects.filter(project =>
-    selectedTags.value.some(tag => project.tags.includes(tag)),
-  )
+  return projects.filter((project) => selectedTags.value.some((tag) => project.tags.includes(tag)))
 })
 
 onMounted(() => {
@@ -46,11 +44,7 @@ onMounted(() => {
     />
     <div class="mx--3 py-2">
       <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
-        <Project
-          v-for="(item, idx) in filteredProjects"
-          :key="item.name || idx"
-          :item="item"
-        />
+        <Project v-for="(item, idx) in filteredProjects" :key="item.name || idx" :item="item" />
       </div>
     </div>
   </div>

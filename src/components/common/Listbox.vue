@@ -15,19 +15,22 @@ defineEmits<{
 
 const listboxRef = ref<HTMLElement>()
 
-watch(() => [props.activeIndex, props.show], () => {
-  if (props.show && props.activeIndex !== undefined && listboxRef.value) {
-    nextTick(() => {
-      const activeElement = listboxRef.value?.children[props.activeIndex!] as HTMLElement
-      if (activeElement) {
-        activeElement.scrollIntoView({
-          block: 'nearest',
-          behavior: 'smooth',
-        })
-      }
-    })
-  }
-})
+watch(
+  () => [props.activeIndex, props.show],
+  () => {
+    if (props.show && props.activeIndex !== undefined && listboxRef.value) {
+      nextTick(() => {
+        const activeElement = listboxRef.value?.children[props.activeIndex!] as HTMLElement
+        if (activeElement) {
+          activeElement.scrollIntoView({
+            block: 'nearest',
+            behavior: 'smooth',
+          })
+        }
+      })
+    }
+  },
+)
 </script>
 
 <template>
@@ -45,10 +48,7 @@ watch(() => [props.activeIndex, props.show], () => {
       aria-label="Available options"
       class="absolute left-0 right-0 top-full z-10 max-h-60 flex flex-col overflow-y-auto custom-outline b-t-0 border--c-inverse-2 rd-t-0 bg--c-primary"
     >
-      <div
-        v-if="items.length === 0"
-        class="flex grow gap-2 rd-b-2 pl-2 opacity-70 outline-none"
-      >
+      <div v-if="items.length === 0" class="flex grow gap-2 rd-b-2 pl-2 opacity-70 outline-none">
         <div class="i-carbon:warning-hex my-auto" aria-hidden="true" />
         <span>No matches</span>
       </div>
@@ -59,9 +59,7 @@ watch(() => [props.activeIndex, props.show], () => {
         :key="i"
         :aria-label="`Select ${i}`"
         :aria-selected="activeIndex === index"
-        :class="[
-          activeIndex === index ? 'text--c-accent bg--c-secondary' : 'hover:text--c-accent',
-        ]"
+        :class="[activeIndex === index ? 'text--c-accent bg--c-secondary' : 'hover:text--c-accent']"
         role="option"
         tabindex="0"
         class="grow cursor-pointer custom-outline-hover pl-2 outline-none last:rd-b-2"

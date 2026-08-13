@@ -62,10 +62,7 @@ onMounted(() => {
           {{ item.desc }}
         </div>
 
-        <div
-          v-if="item.tags && item.tags.length"
-          class="mt-2 flex flex-wrap items-center gap-2"
-        >
+        <div v-if="item.tags && item.tags.length" class="mt-2 flex flex-wrap items-center gap-2">
           <span
             v-for="(t, i) in item.tags"
             :key="i"

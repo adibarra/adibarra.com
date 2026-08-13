@@ -3,11 +3,11 @@
     "target": "ESNext",
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
-    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "ignoreDeprecations": "6.0",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "types": [
@@ -17,6 +17,7 @@
       "unplugin-vue-macros/macros-global",
       "unplugin-vue-router/client"
     ],
+    "allowArbitraryExtensions": true,
     "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
@@ -28,10 +29,7 @@
     "skipLibCheck": true
   },
   "vueCompilerOptions": {
-    "plugins": [
-      "@vue-macros/volar/define-model",
-      "@vue-macros/volar/define-slots"
-    ]
+    "plugins": ["@vue-macros/volar/define-model", "@vue-macros/volar/define-slots"]
   },
   "exclude": ["dist", "node_modules"]
 }

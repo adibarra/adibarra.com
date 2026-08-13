@@ -1,6 +1,21 @@
 packages:
   - .
+minimumReleaseAge: 720
+minimumReleaseAgeStrict: true
+minimumReleaseAgeIgnoreMissingTime: false
 shamefullyHoist: true
 strictPeerDependencies: false
 onlyBuiltDependencies:
   - esbuild
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@0.2.9
+  vite-plus: 0.2.9
+overrides:
+  vite: 'catalog:'
+  esbuild: 0.28.2
+  serialize-javascript: 7.1.0
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: '*'

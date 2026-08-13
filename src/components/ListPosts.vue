@@ -2,12 +2,13 @@
 import type { Post, PostRoute } from '~/types'
 
 const router = useRouter()
-const posts: Post[] = router.getRoutes()
-  .filter(i => i.path.startsWith('/posts/'))
-  .filter(i => i.meta.frontmatter)
-  .map(i => i as PostRoute)
+const posts: Post[] = router
+  .getRoutes()
+  .filter((i) => i.path.startsWith('/posts/'))
+  .filter((i) => i.meta.frontmatter)
+  .map((i) => i as PostRoute)
   .sort((a, b) => +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date))
-  .map(i => ({
+  .map((i) => ({
     path: i.path,
     title: i.meta.frontmatter.display || i.meta.frontmatter.title,
     date: i.meta.frontmatter.date,
@@ -19,15 +20,10 @@ const posts: Post[] = router.getRoutes()
 <template>
   <ul>
     <template v-if="!posts.length">
-      <div class="py2 opacity-50">
-        { nothing here yet }
-      </div>
+      <div class="py2 opacity-50">{ nothing here yet }</div>
     </template>
 
-    <template
-      v-for="route, idx in posts"
-      :key="route.path"
-    >
+    <template v-for="(route, idx) in posts" :key="route.path">
       <div
         v-if="!isSameYear(route.date, posts[idx - 1]?.date)"
         class="pointer-events-none relative h-20"
@@ -55,12 +51,7 @@ const posts: Post[] = router.getRoutes()
 
           <div class="text-sm opacity-50">
             {{ formatDate(route.date) }}
-            <span
-              v-if="route.duration"
-              class="opacity-80"
-            >
-              · {{ route.duration }}
-            </span>
+            <span v-if="route.duration" class="opacity-80"> · {{ route.duration }} </span>
           </div>
         </li>
       </router-link>

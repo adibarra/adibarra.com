@@ -93,11 +93,16 @@ The solution I came up with was allowing the frontend to specify which departmen
 ```js
 const query = `search?d=${department}&c=${course}`
 
-fetch(query).then((response) => {
-  response.json().then((responseJSON) => {
-    // Do something with the data
-  }).catch(() => reject('Server error'))
-}).catch(err => reject(err))
+fetch(query)
+  .then((response) => {
+    response
+      .json()
+      .then((responseJSON) => {
+        // Do something with the data
+      })
+      .catch(() => reject('Server error'))
+  })
+  .catch((err) => reject(err))
 ```
 
 <div class="caption">

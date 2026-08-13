@@ -47,7 +47,7 @@ const placeholder = computed(() => props.placeholder)
 
 const items = ref<SelectItem<T>[]>([])
 
-const selected = computed(() => items.value.filter(i => i.selected))
+const selected = computed(() => items.value.filter((i) => i.selected))
 
 const noneSelected = computed(() => selected.value.length === 0)
 
@@ -59,23 +59,19 @@ const itemsByLabel = computed(() => {
   return map
 })
 
-const unselectedItems = computed(() =>
-  items.value.filter(i => !i.selected).map(i => i.label),
-)
+const unselectedItems = computed(() => items.value.filter((i) => !i.selected).map((i) => i.label))
 
-const selectedItems = computed(() =>
-  selected.value.map(i => i.item),
-)
+const selectedItems = computed(() => selected.value.map((i) => i.item))
 
 const searchResults = computed(() => {
   const query = searchQuery.value
   return query
-    ? fuzzysort.go(query, unselectedItems.value).map(i => i.target)
+    ? fuzzysort.go(query, unselectedItems.value).map((i) => i.target)
     : unselectedItems.value
 })
 
 function createInitialItems(): SelectItem<T>[] {
-  const regularItems: SelectItem<T>[] = options.value.map(i => ({
+  const regularItems: SelectItem<T>[] = options.value.map((i) => ({
     item: i as T,
     label: serializer.value(i as T),
     selected: (modelValue.value as readonly T[]).includes(i as T),
@@ -88,9 +84,12 @@ function resizeInput(): void {
   if (!input.value) return
 
   const el = input.value
-  const width = searchQuery.value.length === 0
-    ? (noneSelected.value ? placeholder.value.length + 2 : 0)
-    : searchQuery.value.length + 2
+  const width =
+    searchQuery.value.length === 0
+      ? noneSelected.value
+        ? placeholder.value.length + 2
+        : 0
+      : searchQuery.value.length + 2
 
   el.style.width = `${width}ch`
   activeListboxIndex.value = 0
@@ -173,8 +172,7 @@ function handleKeydown(e: KeyboardEvent): void {
       e.preventDefault()
       if (!showListbox.value) {
         showListbox.value = true
-      }
-      else if (activeListboxIndex.value < searchResults.value.length - 1) {
+      } else if (activeListboxIndex.value < searchResults.value.length - 1) {
         activeListboxIndex.value++
       }
       break
@@ -214,7 +212,7 @@ function handleListboxUpdate(value: string): void {
 }
 
 function clearSelected(): void {
-  items.value.forEach(i => i.selected = false)
+  items.value.forEach((i) => (i.selected = false))
   emitSelection()
   resizeInput()
 }
@@ -231,11 +229,7 @@ onMounted(() => {
     showListbox.value = false
   })
 
-  watch(
-    () => options.value,
-    handleOptionsChange,
-    { immediate: true },
-  )
+  watch(() => options.value, handleOptionsChange, { immediate: true })
 
   watch(() => modelValue.value, handleExternalModelValueChange)
   watch(() => searchQuery, resizeInput)
@@ -243,10 +237,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    ref="root"
-    class="relative flex flex-col"
-  >
+  <div ref="root" class="relative flex flex-col">
     <div
       class="min-h-9 flex flex-wrap cursor-text custom-outline pl-1 pt-1"
       @click="input?.focus()"
@@ -270,16 +261,23 @@ onMounted(() => {
         :aria-describedby="selected.length > 0 ? 'selected-items' : undefined"
         :placeholder="noneSelected ? placeholder : ''"
         class="my-auto mb-1 mr-1 h-6.5 min-w-2 bg-transparent pl-1 outline-none placeholder:text--c-text placeholder:opacity-60"
-        @focus="(showListbox = true)"
+        @focus="showListbox = true"
         @keydown="handleKeydown"
-      >
+      />
       <div
         v-if="selected.length > 0"
         id="selected-items"
         aria-live="polite"
-        style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"
+        style="
+          position: absolute;
+          left: -10000px;
+          top: auto;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+        "
       >
-        Selected: {{ selected.map(s => s.label).join(', ') }}
+        Selected: {{ selected.map((s) => s.label).join(', ') }}
       </div>
       <div
         v-if="!noneSelected"
