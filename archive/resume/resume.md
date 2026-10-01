@@ -4,6 +4,7 @@ display: Resume
 subtitle: My professional experience, skills, and qualifications.
 ---
 
+<!--
 <figure>
   <img
     src="/assets/resume/resume-1.png"
@@ -18,3 +19,4 @@ subtitle: My professional experience, skills, and qualifications.
     <DownloadLink url="/assets/resume/Resume - Alec Ibarra.pdf" />
   </figcaption>
 </figure>
+-->

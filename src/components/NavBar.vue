@@ -25,10 +25,6 @@ import { siteConfig } from '~/config'
         <span class="lt-md:hidden">Blog</span>
         <div class="i-ri-article-line md:hidden" />
       </router-link> -->
-      <router-link to="/resume" title="Resume">
-        <span class="lt-md:hidden">Resume</span>
-        <div class="i-uil-file-alt md:hidden" aria-hidden="true" />
-      </router-link>
       <a
         :href="`https://github.com/${siteConfig.github}`"
         title="GitHub"
